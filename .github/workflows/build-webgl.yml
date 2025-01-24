@@ -33,20 +33,21 @@ jobs:
 
       # 4. Build the project (WebGL target)
       - name: Build WebGL
-        uses: game-ci/unity-builder@v2
+        uses: game-ci/unity-builder@v4
         env:
             UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
             UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
             UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          unityVersion: docker pull unityci/editor:ubuntu-2022.3.56f1-webgl-3.1.0
+        #   unityVersion: docker pull unityci/editor:ubuntu-2022.3.56f1-webgl-3.1.0
+          unityVersion: auto
           targetPlatform: WebGL
           # By default, it will look for your .sln or .csproj in your root project folder.
           # If your Unity project is in a subdirectory, specify the path:
           # projectPath: MyUnityProject/
       
       - name: Upload WebGL build
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: WebGLBuild
           path: build/WebGL
