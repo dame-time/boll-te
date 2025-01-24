@@ -39,7 +39,7 @@ jobs:
             UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
             UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          unityVersion: auto
+          unityVersion: docker pull unityci/editor:ubuntu-2022.3.56f1-webgl-3.1.0
           targetPlatform: WebGL
           # By default, it will look for your .sln or .csproj in your root project folder.
           # If your Unity project is in a subdirectory, specify the path:
