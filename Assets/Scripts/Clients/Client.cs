@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Clients.Orders;
 using Env;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Clients
 {
@@ -10,7 +12,7 @@ namespace Clients
     {
         private Lane _lane;
         private ClientsPool _clientsPool;
-        private int _currentLanePositionIndex = -1;
+        private int _currentLanePositionIndex = 1;
         private bool _isMoving = false;
 
         public Ticket _ticket;
@@ -18,6 +20,10 @@ namespace Clients
         private bool _terminated = false;
         
         private Collider _collider;
+
+        public float timer;
+
+        public Slider timeSlider;
 
         public void Initialize()
         {
@@ -28,6 +34,7 @@ namespace Clients
             LevelManager.Instance.tickets.Enqueue(_ticket);
             
             _collider = GetComponentInChildren<Collider>();
+            
             _collider.enabled = false;
 
             foreach (var order in _orders)
@@ -35,29 +42,38 @@ namespace Clients
             Debug.Log("---------");
         }
 
-        public void MoveTowardsNextPosition()
+        public void setSlider(GameObject client)
         {
-            if (_isMoving) return;
+            timeSlider = client.GetComponentInChildren<Slider>();
+            timeSlider.maxValue = timer;
+            timeSlider.value = timer;
+            timeSlider.gameObject.SetActive(false);
+        }
 
-            if (_currentLanePositionIndex == -1)
-            {
-                StartCoroutine(MoveClient(_lane.laneStart.position, _lane.lanePositions[_lane.lanePositions.Count -1].position));
-                _currentLanePositionIndex = 0;
-            }
-            else if (_currentLanePositionIndex < _lane.lanePositions.Count - 1)
-            {
-                StartCoroutine(MoveClient(
-                    _lane.lanePositions[_currentLanePositionIndex].position,
-                    _lane.lanePositions[++_currentLanePositionIndex].position
-                ));
-            }
-            else if (_currentLanePositionIndex == _lane.lanePositions.Count - 1)
-            {
-                StartCoroutine(MoveClient(
-                    _lane.lanePositions[_currentLanePositionIndex].position,
-                    _lane.laneEnd.position
-                ));
-            }
+        public void MoveTowardsNextPosition(int currentIndex)
+        {
+            //if (_isMoving) return;
+
+            StartCoroutine(MoveClient(_lane.laneStart.position, _lane.lanePositions[_lane.lanePositions.Count - currentIndex].position));
+
+            //if (currentIndex == 1)
+            //{
+            //    StartCoroutine(MoveClient(_lane.laneStart.position, _lane.lanePositions[_lane.lanePositions.Count - currentIndex].position));
+            //}
+            //else if (currentIndex < _lane.lanePositions.Count - 1)
+            //{
+            //    StartCoroutine(MoveClient(
+            //        _lane.laneStart.position,
+            //        _lane.lanePositions[_lane.lanePositions.Count - currentIndex].position
+            //    ));
+            //}
+            //else if (_currentLanePositionIndex == _lane.lanePositions.Count - 1)
+            //{
+            //    StartCoroutine(MoveClient(
+            //        _lane.lanePositions[_currentLanePositionIndex].position,
+            //        _lane.laneEnd.position
+            //    ));
+            //}
         }
 
         private void Update()
@@ -94,6 +110,32 @@ namespace Clients
             if (transform.position == _lane.laneEnd.position) _clientsPool.PopClient();
 
             _isMoving = false;
+            timeSlider.gameObject.SetActive(true);
+            StartCoroutine(TimerDecrease(timer));
+        }
+
+        private IEnumerator TimerDecrease(float timer)
+        {
+            while (timer > 0)
+            {
+                print($"current timer: {timer}");
+                // Decrease the timer
+                timer -= Time.deltaTime;
+
+                // Update the slider
+                timeSlider.value = timer;
+
+                // Wait for the next frame
+                yield return null;
+            }
+
+            // Ensure the timer stops exactly at 0
+            timer = 0;
+            timeSlider.value = 0;
+            timeSlider.gameObject.SetActive(false);
+            StartCoroutine(MoveClient(this.transform.position, _lane.laneEnd.position));
+            //_clientsPool.PopClient();
+            Debug.Log("Timer finished!");
         }
     }
 }
