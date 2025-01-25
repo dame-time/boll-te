@@ -32,6 +32,9 @@ namespace Clients
         public Sprite iconThe;
         public Image[] images;
 
+        public Animator clientAnimator;
+
+        private GameObject childSK;
 
 
 
@@ -61,6 +64,13 @@ namespace Clients
             images[2].preserveAspect = true;
             images[2].gameObject.SetActive(false);
             print("image on this object: " + images[2]);
+
+            clientAnimator = this.gameObject.GetComponentInChildren<Animator>();
+            print("animator on this object: " + clientAnimator);
+
+            Transform skChild = this.gameObject.transform.Find("SK_Cliente");
+            childSK = skChild.gameObject;
+
 
             //foreach (var order in _orders)
             //    Debug.Log(order.orderName);
@@ -153,6 +163,8 @@ namespace Clients
                 _isMoving = false;
                 timeSlider.gameObject.SetActive(true);
                 images[2].gameObject.SetActive(true);
+                clientAnimator.SetBool("isIdle", true);
+                childSK.transform.rotation = Quaternion.Euler(0, 90, 0);
                 StartCoroutine(TimerDecrease(timer));
             }
 
@@ -178,6 +190,8 @@ namespace Clients
             timeSlider.value = 0;
             timeSlider.gameObject.SetActive(false);
             images[2].gameObject.SetActive(false);
+            childSK.transform.rotation = Quaternion.Euler(0, 180, 0);
+            clientAnimator.SetBool("isIdle", false);
             StartCoroutine(MoveClient(this.transform.position, _lane.laneEnd.position, false));
             _clientsPool._clients.Remove(this.gameObject);
             print("current index of client = " + _clientsPool.currentIndex);

@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private InputAction interaction;
     [SerializeField]
-    private InputAction drop;
+    private InputAction clientInteraction;
 
     [SerializeField]
     private Animator playerAnimator;
@@ -54,9 +54,9 @@ public class PlayerMovement : MonoBehaviour
     {
         playerControls.Enable();
         interaction.Enable();
-        drop.Enable();
+        clientInteraction.Enable();
         interaction.performed += Interact;
-        // drop.performed += Drop;
+        clientInteraction.performed += InteractionClient;
 
     }
 
@@ -66,8 +66,10 @@ public class PlayerMovement : MonoBehaviour
         playerControls.Disable();
         interaction.Disable();
         interaction.performed -= Interact;
-        // drop.performed -= Drop;
+        clientInteraction.performed -= InteractionClient;
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -131,6 +133,14 @@ public class PlayerMovement : MonoBehaviour
     {
         tempHold.SetActive(false);
         tempHold = null;
+    }
+
+    private void InteractionClient(InputAction.CallbackContext context)
+    {
+        //controllo sono dal cliente
+        // reference prefab the
+        // controllo che prefab sia uguale a the cliente
+        // 
     }
 
     IEnumerator ExampleCoroutine(ExecutedAction action)
