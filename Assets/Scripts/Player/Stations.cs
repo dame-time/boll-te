@@ -26,6 +26,8 @@ namespace Player
         
         public Station GetActiveStation()
         {
+            if (_stationQueue.Count == 0) return null;
+            
             return _stationQueue.Peek();
         }
 
