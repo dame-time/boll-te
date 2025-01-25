@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 215d199a47a5e794d8819978901ad28d
+guid: aa51906361b96d2408096638e1feae68
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gigio
+    second: {fileID: 2100000, guid: da0fb7478792da840bc9ea058837c145, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -42,7 +47,7 @@ ModelImporter:
     sortHierarchyByName: 1
     importPhysicalCameras: 1
     importVisibility: 1
-    importBlendShapes: 1
+    importBlendShapes: 0
     importCameras: 1
     importLights: 1
     nodeNameCollisionStrategy: 1
