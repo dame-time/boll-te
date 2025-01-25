@@ -17,41 +17,41 @@ public class LevelManager : MonoBehaviour
     
     private ClientsPool _clientsPool;
     
-    private void Awake()
-    {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
+    //private void Awake()
+    //{
+    //    if (Instance == null)
+    //        Instance = this;
+    //    else
+    //        Destroy(gameObject);
         
-        _clientsPool = FindObjectOfType<ClientsPool>();
-    }
+    //    _clientsPool = FindObjectOfType<ClientsPool>();
+    //}
 
-    public List<OrderObject> PickRandomOrders()
-    {
-        var orders = new List<OrderObject>();
+    //public List<OrderObject> PickRandomOrders()
+    //{
+    //    var orders = new List<OrderObject>();
         
-        var rng = Random.Range(1, maxOrders + 1);
-        for (var i = 0; i < rng; i++) 
-            orders.Add(possibleOrders[Random.Range(0, possibleOrders.Count)]);
+    //    var rng = Random.Range(1, maxOrders + 1);
+    //    for (var i = 0; i < rng; i++) 
+    //        orders.Add(possibleOrders[Random.Range(0, possibleOrders.Count)]);
 
-        return orders;
-    }
+    //    return orders;
+    //}
 
-    private void Update()
-    {
-        if (tickets.Count == 0) return;
+    //private void Update()
+    //{
+    //    if (tickets.Count == 0) return;
         
-        var ticket = tickets.Peek();
-        if (ticket.isComplete)
-        {
-            // Give the player money
-            tickets.Dequeue();
-            return;
-        }
+    //    var ticket = tickets.Peek();
+    //    if (ticket.isComplete)
+    //    {
+    //        // Give the player money
+    //        tickets.Dequeue();
+    //        return;
+    //    }
 
-        if (!ticket.isFailed) return;
+    //    if (!ticket.isFailed) return;
         
-        tickets.Dequeue();
-    }
+    //    tickets.Dequeue();
+    //}
 }

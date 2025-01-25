@@ -10,7 +10,17 @@ public class GameManager : MonoBehaviour
 
     public SerializedDictionary<string, GameObject> fruitMapper = new SerializedDictionary<string, GameObject>();
     public SerializedDictionary<GameObject, BubbleType> bubbleMapper = new SerializedDictionary<GameObject, BubbleType>();
-    
+
+    [System.Serializable] // Questo permette di vedere la struct nell'Inspector
+    public struct TheData
+    {
+        public string name;      // Nome dell'oggetto
+        public Sprite image;     // Immagine dell'oggetto
+        public int value;        // Valore dell'oggetto
+    }
+
+    public TheData[] TheArrayType;
+
     [SerializeField] private int clientsToSpawn = 5;
     
     private ClientsPool _clientsPool;

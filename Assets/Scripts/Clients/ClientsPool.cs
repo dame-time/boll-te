@@ -40,10 +40,10 @@ namespace Clients
             _clients.Add(client);
             clientComponent.MoveTowardsNextPosition(currentIndex+1);
             clientComponent.setSlider(client);
-            print("current index before client = " + currentIndex);
+            //print("current index before client = " + currentIndex);
             currentIndex++;
             clientComponent.indexClient = _lane.lanePositions.Count - currentIndex;
-            print("current index of client = " + currentIndex);
+            //print("current index of client = " + currentIndex);
 
 
         }
