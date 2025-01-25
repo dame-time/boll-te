@@ -148,7 +148,6 @@ public class PlayerMovement : MonoBehaviour
 
         var action = _stations.GetActiveStation().ExecuteAction();
 
-        print($"call action = {action.ToString()}");
         if (action == ExecutedAction.None) return;
         
         playerAnimator.SetBool(action.ToString(), true);

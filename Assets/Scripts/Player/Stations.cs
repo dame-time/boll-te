@@ -55,7 +55,6 @@ namespace Player
             
             var activeStation = GetActiveStation();
             _playerMovement.canGrab = activeStation.stationItem != null;
-            Debug.Log($"Active station: {activeStation.name}");
         }
     }
 }

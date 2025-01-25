@@ -83,7 +83,6 @@ namespace Player
                         break;
                     case StationBothType.Droppable:
                         var dropAction = DropItem();
-                        Debug.Log(dropAction.ToString());
                         if (dropAction == ExecutedAction.None) return ExecutedAction.None;
                         if (stationItem.itemType == ItemType.Bubbler)
                             initialStationStatus = StationBothType.Progress;
