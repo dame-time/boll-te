@@ -5,28 +5,28 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638734156320000000
-    m_Hash: 1408532402
+      ticks: 638734268640000000
+    m_Hash: 1639498677
   m_LockFileStatus:
     m_FilePath: /Users/davidepaollilo/Desktop/Workspace/Unity/boll-te/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638734156320000000
-    m_Hash: 1158383831
+      ticks: 638734268640000000
+    m_Hash: 2018611796
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus:
-  - m_FilePath: /Users/davidepaollilo/Downloads/SerializedDictionary/package.json
+  - m_FilePath: /Users/davidepaollilo/Desktop/Workspace/Unity/boll-te/SerializedDictionary/package.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
       ticks: 638133900650000000
     m_Hash: 2930946729
-  - m_FilePath: /Users/davidepaollilo/Downloads/SerializedDictionary
+  - m_FilePath: /Users/davidepaollilo/Desktop/Workspace/Unity/boll-te/SerializedDictionary
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
@@ -36,12 +36,12 @@ m_LocalPackages:
 m_ProjectPath: /Users/davidepaollilo/Desktop/Workspace/Unity/boll-te/Packages
 m_EditorVersion: 2022.3.19f1 (244b723c30a6)
 m_ResolvedPackages:
-- packageId: ayellowpaper.serialized-dictionary@file:/Users/davidepaollilo/Downloads/SerializedDictionary
+- packageId: ayellowpaper.serialized-dictionary@file:/Users/davidepaollilo/Desktop/Workspace/Unity/boll-te/SerializedDictionary
   testable: 0
   isDirectDependency: 1
   version: 1.0.0
   source: 4
-  resolvedPath: /Users/davidepaollilo/Downloads/SerializedDictionary
+  resolvedPath: /Users/davidepaollilo/Desktop/Workspace/Unity/boll-te/SerializedDictionary
   assetPath: Packages/ayellowpaper.serialized-dictionary
   name: ayellowpaper.serialized-dictionary
   displayName: Serialized Dictionary

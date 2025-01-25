@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "ayellowpaper.serialized-dictionary": {
-      "version": "file:/Users/davidepaollilo/Downloads/SerializedDictionary",
+      "version": "file:../SerializedDictionary",
       "depth": 0,
       "source": "local",
       "dependencies": {}

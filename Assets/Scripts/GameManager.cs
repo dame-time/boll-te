@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _clientsPool.AddClient();
-            _clientsPool.MoveClients();
+            // _clientsPool.MoveClients();
         }
     }
 }
