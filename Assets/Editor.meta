@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: edbe6a45e61f19649b3f7b5eb80d36fd
+=======
+guid: 3b06b8eeb28ff4f7698d38af90bba9b0
+>>>>>>> 6e630dc (Added clients with orders)
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
