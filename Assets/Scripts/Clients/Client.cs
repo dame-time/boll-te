@@ -25,6 +25,8 @@ namespace Clients
 
         public Slider timeSlider;
 
+        public int indexClient;
+
         public void Initialize()
         {
             _lane = FindObjectOfType<Lane>();
@@ -54,7 +56,8 @@ namespace Clients
         {
             //if (_isMoving) return;
 
-            StartCoroutine(MoveClient(_lane.laneStart.position, _lane.lanePositions[_lane.lanePositions.Count - currentIndex].position));
+            print("moving into lane " + _lane.lanePositions[_lane.lanePositions.Count - currentIndex]);
+            StartCoroutine(MoveClient(_lane.laneStart.position, _lane.lanePositions[_lane.lanePositions.Count - currentIndex].position,true));
 
             //if (currentIndex == 1)
             //{
@@ -76,6 +79,13 @@ namespace Clients
             //}
         }
 
+        public void MoveListPosition()
+        {
+            print("moving into lane " + _lane.lanePositions[indexClient]);
+            StartCoroutine(MoveClient(this.transform.position, _lane.lanePositions[indexClient].position, false));
+            indexClient++;
+        }
+
         private void Update()
         {
             _collider.enabled = _clientsPool.PeekClient() == this;
@@ -86,11 +96,11 @@ namespace Clients
             StopAllCoroutines();
             StartCoroutine(MoveClient(
                 _lane.lanePositions[_currentLanePositionIndex].position,
-                _lane.laneEnd.position
+                _lane.laneEnd.position, false
             ));
         }
 
-        private IEnumerator MoveClient(Vector3 start, Vector3 end)
+        private IEnumerator MoveClient(Vector3 start, Vector3 end, bool firstEntry)
         {
             _isMoving = true;
 
@@ -107,18 +117,26 @@ namespace Clients
 
             transform.position = end;
 
-            if (transform.position == _lane.laneEnd.position) _clientsPool.PopClient();
+            if (transform.position == _lane.laneEnd.position)
+            {
+                print("POPPAAAAA");
+                _clientsPool.PopClient(this.gameObject);
+            }
 
-            _isMoving = false;
-            timeSlider.gameObject.SetActive(true);
-            StartCoroutine(TimerDecrease(timer));
+            if (firstEntry)
+            {
+                _isMoving = false;
+                timeSlider.gameObject.SetActive(true);
+                StartCoroutine(TimerDecrease(timer));
+            }
+
         }
 
         private IEnumerator TimerDecrease(float timer)
         {
             while (timer > 0)
             {
-                print($"current timer: {timer}");
+                //print($"current timer: {timer}");
                 // Decrease the timer
                 timer -= Time.deltaTime;
 
@@ -133,7 +151,17 @@ namespace Clients
             timer = 0;
             timeSlider.value = 0;
             timeSlider.gameObject.SetActive(false);
-            StartCoroutine(MoveClient(this.transform.position, _lane.laneEnd.position));
+            StartCoroutine(MoveClient(this.transform.position, _lane.laneEnd.position, false));
+            _clientsPool._clients.Remove(this.gameObject);
+            print("current index of client = " + _clientsPool.currentIndex);
+            int tempIndex = _clientsPool.currentIndex-1;
+            foreach (GameObject currentClient in _clientsPool._clients)
+            {
+
+                currentClient.GetComponent<Client>().MoveListPosition();
+
+            }
+            _clientsPool.currentIndex--;
             //_clientsPool.PopClient();
             Debug.Log("Timer finished!");
         }
