@@ -1,11 +1,12 @@
 using System;
+using Clients.Orders;
 using UnityEngine;
 
 namespace Player
 {
     public class Station : MonoBehaviour
     {
-        public GameObject stationObject;
+        public Item stationItem;
         
         private Stations _stations;
 
