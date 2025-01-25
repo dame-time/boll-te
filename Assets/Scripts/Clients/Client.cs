@@ -56,8 +56,8 @@ namespace Clients
         {
             //if (_isMoving) return;
 
-            print("moving into lane " + _lane.lanePositions[_lane.lanePositions.Count - currentIndex]);
-            StartCoroutine(MoveClient(_lane.laneStart.position, _lane.lanePositions[_lane.lanePositions.Count - currentIndex].position,true));
+            print("lane count " + _lane.lanePositions.Count);
+            StartCoroutine(MoveClient(_lane.laneStart.position, _lane.lanePositions[_lane.lanePositions.Count-currentIndex].position,true));
 
             //if (currentIndex == 1)
             //{
@@ -81,8 +81,9 @@ namespace Clients
 
         public void MoveListPosition()
         {
+            print("index client ? " + indexClient);
             print("moving into lane " + _lane.lanePositions[indexClient]);
-            StartCoroutine(MoveClient(this.transform.position, _lane.lanePositions[indexClient].position, false));
+            StartCoroutine(MoveClient(this.transform.position, _lane.lanePositions[indexClient+1].position, false));
             indexClient++;
         }
 
@@ -154,7 +155,6 @@ namespace Clients
             StartCoroutine(MoveClient(this.transform.position, _lane.laneEnd.position, false));
             _clientsPool._clients.Remove(this.gameObject);
             print("current index of client = " + _clientsPool.currentIndex);
-            int tempIndex = _clientsPool.currentIndex-1;
             foreach (GameObject currentClient in _clientsPool._clients)
             {
 

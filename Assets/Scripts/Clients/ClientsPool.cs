@@ -38,11 +38,13 @@ namespace Clients
             //clientComponent.timeSlider.value = clientComponent.timer;
             client.transform.position = _lane.laneStart.position;
             _clients.Add(client);
-            clientComponent.MoveTowardsNextPosition(currentIndex);
+            clientComponent.MoveTowardsNextPosition(currentIndex+1);
             clientComponent.setSlider(client);
-            clientComponent.indexClient = _lane.lanePositions.Count - currentIndex + 1;
-            print("current index of client = " + currentIndex);
+            print("current index before client = " + currentIndex);
             currentIndex++;
+            clientComponent.indexClient = _lane.lanePositions.Count - currentIndex;
+            print("current index of client = " + currentIndex);
+
 
         }
         
