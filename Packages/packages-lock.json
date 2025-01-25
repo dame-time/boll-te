@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "ayellowpaper.serialized-dictionary": {
+      "version": "file:/Users/davidepaollilo/Downloads/SerializedDictionary",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.collab-proxy": {
       "version": "2.6.0",
       "depth": 0,

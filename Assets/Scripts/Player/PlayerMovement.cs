@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Clients.Orders;
 using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -136,9 +137,26 @@ public class PlayerMovement : MonoBehaviour
     {
         if (action == ExecutedAction.Grabbed)
         {
-            tempHold = Instantiate(_playerBackpack.objectHolded, hardcodePosition.transform.position, hardcodePosition.transform.rotation);
-            tempHold.transform.localScale = new Vector3(_playerBackpack.transform.localScale.x, _playerBackpack.transform.localScale.y, _playerBackpack.transform.localScale.z);
-            tempHold.SetActive(true);
+            if (tempHold == null)
+            {
+                tempHold = Instantiate(_playerBackpack.objectHolded, hardcodePosition.transform.position, hardcodePosition.transform.rotation);
+                tempHold.SetActive(true);
+            }
+            else
+            {
+                Destroy(tempHold);
+                tempHold = Instantiate(_playerBackpack.objectHolded, hardcodePosition.transform.position, hardcodePosition.transform.rotation);
+                tempHold.SetActive(true);
+            }
+            
+            // tempHold.transform.localScale = new Vector3(_playerBackpack.transform.localScale.x, _playerBackpack.transform.localScale.y, _playerBackpack.transform.localScale.z);
+            if (_playerBackpack.bubbleType != BubbleType.None && tempHold.GetComponent<Bubble>() == null)
+                tempHold.AddComponent<Bubble>().bubbleType = _playerBackpack.bubbleType;
+            if (_playerBackpack.teaSize != TeaSize.None && tempHold.GetComponent<Cup>() == null)
+                tempHold.AddComponent<Cup>().teaSize = _playerBackpack.teaSize;
+            if (_playerBackpack.teaType != TeaType.None && tempHold.GetComponent<Tea>() == null)
+                tempHold.AddComponent<Tea>().teaType = _playerBackpack.teaType;
+            _playerBackpack.objectHolded = tempHold;
         }
 
         yield return new WaitForSeconds(0.2f);

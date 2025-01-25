@@ -1,9 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+using Clients.Orders;
 using UnityEngine;
 
-public class PlayerBackpack : MonoBehaviour
+namespace Player
 {
-    public GameObject objectHolded;
-    public bool isHoldingObject;
+    public class PlayerBackpack : MonoBehaviour
+    {
+        public GameObject objectHolded;
+        public BubbleType bubbleType;
+        public GameObject cupFull;
+        public TeaSize teaSize;
+        public TeaType teaType;
+        public bool isHoldingObject;
+    }
 }

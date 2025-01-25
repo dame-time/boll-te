@@ -2,6 +2,7 @@ namespace Clients.Orders
 {
     public enum BubbleType
     {
+        None,
         Lemon,
         Strawberry,
         Mango,

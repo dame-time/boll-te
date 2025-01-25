@@ -1,6 +1,3 @@
-using UnityEngine;
-using UnityEngine.Serialization;
-
 namespace Clients.Orders
 {
     public class Fruit : ItemBase

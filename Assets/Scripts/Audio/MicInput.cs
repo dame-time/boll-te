@@ -1,3 +1,4 @@
+using Player;
 using UnityEngine;
 
 namespace Audio
@@ -5,20 +6,26 @@ namespace Audio
     public class MicInput : MonoBehaviour
     {
         [SerializeField] private int sampleRate = 44100;
-        [SerializeField] private int fftSize = 1024;
-        [SerializeField] private float blowFrequencyMin = 100f;
-        [SerializeField] private float blowFrequencyMax = 200f;
-        [SerializeField] private float blowMin = 0.02f;
-        [SerializeField] private float blowMax = 0.03f;
+        [SerializeField] private int fftSize = 2048;
+        [SerializeField] private float blowFrequencyMin = 50f;
+        [SerializeField] private float blowFrequencyMax = 500f;
+        [SerializeField] private float blowMin = 0.0f;
+        [SerializeField] private float blowMax = 1.0f;
     
         private float[] _samples;
         private float[] _spectrum;
         
+        public int progress = 0;
+        
         private string _micDevice;
         private AudioSource _audioSource;
 
+        private Station _station;
+
         private void Start()
         {
+            _station = GetComponent<Station>();
+            
             if (Microphone.devices.Length > 0)
             {
                 _micDevice = Microphone.devices[0];
@@ -41,11 +48,23 @@ namespace Audio
         private void Update()
         {
             if (!_audioSource || !_audioSource.clip) return;
+
+            if (progress >= 100)
+            {
+                _station.initialStationStatus = StationBothType.Grabbable;
+                
+                progress = 0;
+                return;
+            }
         
             _audioSource.clip.GetData(_samples, 0);
             AudioListener.GetSpectrumData(_spectrum, 0, FFTWindow.Hamming);
 
-            if (IsBlowDetected(_spectrum)) Debug.Log("Blow detected!");
+            if (IsBlowDetected(_spectrum) && _station.stationType == StationType.Both && _station.initialStationStatus == StationBothType.Progress)
+            {
+                Debug.Log("Blow detected!");
+                progress++;
+            }
         }
 
         private bool IsBlowDetected(float[] spectrum)

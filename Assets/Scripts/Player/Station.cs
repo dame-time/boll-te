@@ -17,6 +17,7 @@ namespace Player
     public enum StationBothType
     {
         Grabbable,
+        Progress,
         Droppable
     }
 
@@ -81,8 +82,12 @@ namespace Player
                         break;
                     case StationBothType.Droppable:
                         var dropAction = DropItem();
+                        Debug.Log(dropAction.ToString());
                         if (dropAction == ExecutedAction.None) return ExecutedAction.None;
-                        initialStationStatus = StationBothType.Grabbable;
+                        if (stationItem.itemType == ItemType.Bubbler)
+                            initialStationStatus = StationBothType.Progress;
+                        else
+                            initialStationStatus = StationBothType.Grabbable;
                         return dropAction;
                         break;
                 }
@@ -90,43 +95,86 @@ namespace Player
             
             return ExecutedAction.None;
         }
-        
-        public ExecutedAction GrabItem()
+
+        private ExecutedAction GrabItem()
         {
             if (stationItem == null) return ExecutedAction.None;
-            if (!stationItem.gameObject.activeSelf || stationType != StationType.Grabbable) return ExecutedAction.None;
+            if (!stationItem.gameObject.activeSelf || (stationType != StationType.Grabbable && stationType != StationType.Both)) return ExecutedAction.None;
             
-            _playerBackpack.objectHolded = stationItem.gameObject;
-            _playerBackpack.isHoldingObject = true;
-            StartCoroutine(ReEnableItem());
+            if (stationItem.itemType == ItemType.Tea)
+            {
+                if (!_playerBackpack.isHoldingObject || _playerBackpack.teaSize == TeaSize.None) return ExecutedAction.None;
+                
+                var tea = stationItem.GetItem<Tea>();
+                if (tea == null || _playerBackpack.teaSize == TeaSize.None) return ExecutedAction.None;
+
+                _playerBackpack.objectHolded = _playerBackpack.cupFull;
+                _playerBackpack.teaType = tea.teaType;
+                
+                return ExecutedAction.Grabbed;
+            }
             
+            if (_playerBackpack.isHoldingObject) return ExecutedAction.None;
+
+            if (stationItem.itemType == ItemType.Bubbler)
+            {
+                var bubbler = stationItem.GetItem<Bubbler>();
+                _playerBackpack.objectHolded = GameManager.Instance.fruitMapper[bubbler.bubbleType.ToString()];
+                _playerBackpack.bubbleType = bubbler.bubbleType;
+                _playerBackpack.isHoldingObject = true;
+            }
+            else if (stationItem.itemType == ItemType.Cup)
+            {
+                var cup = stationItem.GetItem<Cup>();
+                if (cup == null || cup.cupStatus != CupStatus.Bubbles || _playerBackpack.teaSize != TeaSize.None) return ExecutedAction.None;
+                
+                _playerBackpack.objectHolded = cup.cupBubbles;
+                _playerBackpack.cupFull = cup.cupFull;
+                _playerBackpack.bubbleType = cup.bubble;
+                _playerBackpack.teaSize = cup.teaSize;
+                _playerBackpack.isHoldingObject = true;
+                
+                cup.ResetCup();
+            }
+            else
+            {
+                _playerBackpack.objectHolded = stationItem.gameObject;
+                _playerBackpack.isHoldingObject = true;
+                StartCoroutine(ReEnableItem());
+            }
+
             return ExecutedAction.Grabbed;
         }
 
         private ExecutedAction DropItem()
         {
             if (stationItem == null) return ExecutedAction.None;
-            if (!stationItem.gameObject.activeSelf || stationType != StationType.Droppable) return ExecutedAction.None;
-
+            if (!stationItem.gameObject.activeSelf || (stationType != StationType.Droppable && stationType != StationType.Both)) return ExecutedAction.None;
+            
             if (stationItem.itemType == ItemType.Cup)
             {
-                if (!_playerBackpack.objectHolded) return ExecutedAction.None;
+                if (!_playerBackpack.isHoldingObject || _playerBackpack.teaSize != TeaSize.None) return ExecutedAction.None;
                 
                 var bubble = _playerBackpack.objectHolded.GetComponent<Bubble>();
                 
                 if (bubble == null) return ExecutedAction.None;
                 
                 var cup = stationItem.GetItem<Cup>();
-                cup.bubble = _playerBackpack.objectHolded.GetComponent<Bubble>();
-                
-                _playerBackpack.objectHolded = null;
-                _playerBackpack.isHoldingObject = false;
+                cup.bubble = bubble.bubbleType;
+
+                cup.SetCupNextStatus();
             }
-            
-            if (stationItem.itemType == ItemType.Bin)
+
+            if (stationItem.itemType == ItemType.Bubbler)
             {
-                _playerBackpack.objectHolded = null;
-                _playerBackpack.isHoldingObject = false;
+                if (!_playerBackpack.objectHolded) return ExecutedAction.None;
+                
+                var fruit = _playerBackpack.objectHolded.GetComponent<Fruit>();
+                
+                if (fruit == null) return ExecutedAction.None;
+                
+                var bubbler = stationItem.GetItem<Bubbler>();
+                bubbler.bubbleType = fruit.bubbleType;
             }
             
             if (stationItem.itemType == ItemType.Tea)
@@ -139,11 +187,13 @@ namespace Player
                 
                 var tea = stationItem.GetItem<Tea>();
                 
-                cup.tea = tea;
-                
-                _playerBackpack.objectHolded = null;
-                _playerBackpack.isHoldingObject = false;
+                cup.tea = tea.teaType;
             }
+            
+            _playerBackpack.objectHolded = null;
+            _playerBackpack.isHoldingObject = false;
+            _playerBackpack.teaSize = TeaSize.None;
+            _playerBackpack.bubbleType = BubbleType.None;
 
             _playerMovement.Drop();
             return ExecutedAction.Dropped;

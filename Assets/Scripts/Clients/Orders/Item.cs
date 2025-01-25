@@ -25,6 +25,8 @@ namespace Clients.Orders
                     return item as T;
                 case ItemType.Cup when typeof(T) == typeof(Cup):
                     return item as T;
+                case ItemType.Bubbler when typeof(T) == typeof(Bubbler):
+                    return item as T;
                 case ItemType.None:
                 default:
                     Debug.LogWarning($"GetItem<{typeof(T).Name}> failed: itemType is {itemType}");
