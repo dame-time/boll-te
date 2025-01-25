@@ -532,6 +532,18 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5390765505127396391, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5390765505127396391, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5390765505127396391, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 8553354991323214636, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
       propertyPath: m_Name
       value: Player

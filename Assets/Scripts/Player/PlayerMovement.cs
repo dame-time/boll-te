@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private Animator playerAnimator;
+
+    private bool canMove;
 
     private void OnEnable()
     {
@@ -54,14 +57,35 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rigibody.velocity = new Vector3(moveDirection.x * speed, 0, moveDirection.y * speed);
-        playerAnimator.SetFloat("velocity", rigibody.velocity.magnitude);
+
+        if (!playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("AN_Gigino_Grab"))
+        {
+            //print("playing animation");
+            rigibody.velocity = new Vector3(moveDirection.x * speed, 0, moveDirection.y * speed);
+            playerAnimator.SetFloat("velocity", rigibody.velocity.magnitude);
+
+        }
+        else
+        {
+            rigibody.velocity = Vector3.zero;
+        }
+
+
 
     }
 
     private void Interact(InputAction.CallbackContext context)
     {
-        print("Interaction performed");
+        //print("Interaction performed");
+        playerAnimator.SetBool("grab", true);
+        playerAnimator.SetFloat("velocity", 0);
+        StartCoroutine(ExampleCoroutine());
     }
 
+    IEnumerator ExampleCoroutine()
+    {
+        yield return new WaitForSeconds(0.2f);
+        playerAnimator.SetBool("grab", false);
+        
+    }
 }
