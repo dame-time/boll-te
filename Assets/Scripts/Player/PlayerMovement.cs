@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Clients.Orders;
 using Player;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
     private InputAction interaction;
     [SerializeField]
     private InputAction clientInteraction;
+
+    [SerializeField]
+    private InputAction testHard;
 
     [SerializeField]
     private Animator playerAnimator;
@@ -55,6 +59,8 @@ public class PlayerMovement : MonoBehaviour
         playerControls.Enable();
         interaction.Enable();
         clientInteraction.Enable();
+        testHard.Enable();
+        testHard.performed += HardTest;
         interaction.performed += Interact;
         clientInteraction.performed += InteractionClient;
 
@@ -65,8 +71,17 @@ public class PlayerMovement : MonoBehaviour
     {
         playerControls.Disable();
         interaction.Disable();
+        testHard.Disable();
+        testHard.performed -= HardTest;
         interaction.performed -= Interact;
         clientInteraction.performed -= InteractionClient;
+    }
+
+    private void HardTest(InputAction.CallbackContext context)
+    {
+        objectTest.transform.position = hardcodePosition.transform.position;
+        objectTest.transform.SetParent(hardcodePosition.transform);
+        playerAnimator.SetBool("Grabbed", true);
     }
 
 
