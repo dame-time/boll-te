@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
+using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    public bool canGrab = false;
+    
     [SerializeField]
     private Rigidbody rigibody;
 
@@ -23,11 +25,21 @@ public class PlayerMovement : MonoBehaviour
     private Animator playerAnimator;
 
     //test
-    [SerializeField]
-    private  GameObject objectTest;
-    [SerializeField]
-    private GameObject hardcodePosition;
+    // [SerializeField]
+    // private  GameObject objectTest;
+    // [SerializeField]
+    // private GameObject hardcodePosition;
 
+    private bool canMove;
+    private PlayerBackpack _playerBackpack;
+    private Stations _stations;
+    
+    private void Awake()
+    {
+        _playerBackpack = GetComponent<PlayerBackpack>();
+        _stations = FindObjectOfType<Stations>();
+    }
+    
     private void OnEnable()
     {
         playerControls.Enable();
@@ -80,11 +92,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext context)
     {
+        if (_playerBackpack.isHoldingObject || !canGrab) return;
+        
         //print("Interaction performed");
         playerAnimator.SetBool("grab", true);
         playerAnimator.SetFloat("velocity", 0);
-        objectTest.transform.position = hardcodePosition.transform.position;
-        objectTest.transform.SetParent(hardcodePosition.transform);
+        // objectTest.transform.position = hardcodePosition.transform.position;
+        // objectTest.transform.SetParent(hardcodePosition.transform);
         StartCoroutine(ExampleCoroutine());
     }
 
@@ -92,6 +106,6 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         playerAnimator.SetBool("grab", false);
-        
+        _stations.GetActiveStation().GrabItem();
     }
 }
