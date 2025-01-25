@@ -9,9 +9,12 @@ namespace Player
     {
         private Queue<Station> _stationQueue;
         
+        private PlayerMovement _playerMovement;
+        
         public void Start()
         {
             _stationQueue = new Queue<Station>();
+            _playerMovement = FindObjectOfType<PlayerMovement>();
         }
         
         public void AddStation(Station station)
@@ -42,9 +45,14 @@ namespace Player
 
         private void Update()
         {
-            if (_stationQueue.Count == 0) return;
+            if (_stationQueue.Count == 0)
+            {
+                _playerMovement.canGrab = false;
+                return;
+            }
             
             var activeStation = GetActiveStation();
+            _playerMovement.canGrab = activeStation.stationItem != null;
             Debug.Log($"Active station: {activeStation.name}");
         }
     }
