@@ -16,6 +16,8 @@ namespace Clients
         public Ticket _ticket;
         private List<OrderObject> _orders = new List<OrderObject>();
         private bool _terminated = false;
+        
+        private Collider _collider;
 
         public void Initialize()
         {
@@ -24,6 +26,9 @@ namespace Clients
             LevelManager.Instance.PickRandomOrders().ForEach(order => _orders.Add(order));
             _ticket = new Ticket(this, _orders);
             LevelManager.Instance.tickets.Enqueue(_ticket);
+            
+            _collider = GetComponentInChildren<Collider>();
+            _collider.enabled = false;
 
             foreach (var order in _orders)
                 Debug.Log(order.orderName);
@@ -57,6 +62,8 @@ namespace Clients
 
         private void Update()
         {
+            _collider.enabled = _clientsPool.PeekClient() == this;
+            
             if (_ticket.isInProgress || _terminated) return;
             
             _terminated = true;

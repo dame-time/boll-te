@@ -30,6 +30,11 @@ namespace Clients
             client.transform.position = _lane.laneStart.position;
             _clients.Add(client);
         }
+        
+        public Client PeekClient()
+        {
+            return _clients.Count == 0 ? null : _clients[0].GetComponent<Client>();
+        }
 
         public void PopClient()
         {
