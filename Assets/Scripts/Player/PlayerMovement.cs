@@ -22,7 +22,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Animator playerAnimator;
 
-    private bool canMove;
+    //test
+    [SerializeField]
+    private  GameObject objectTest;
+    [SerializeField]
+    private GameObject hardcodePosition;
 
     private void OnEnable()
     {
@@ -79,6 +83,8 @@ public class PlayerMovement : MonoBehaviour
         //print("Interaction performed");
         playerAnimator.SetBool("grab", true);
         playerAnimator.SetFloat("velocity", 0);
+        objectTest.transform.position = hardcodePosition.transform.position;
+        objectTest.transform.SetParent(hardcodePosition.transform);
         StartCoroutine(ExampleCoroutine());
     }
 
