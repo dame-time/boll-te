@@ -68,8 +68,8 @@ namespace Player
         public ExecutedAction ExecuteAction()
         {
             if (stationType == StationType.Grabbable) return GrabItem();
-            else if (stationType == StationType.Droppable) return DropItem();
-            else if (stationType == StationType.Both)
+            if (stationType == StationType.Droppable) return DropItem();
+            if (stationType == StationType.Both)
             {
                 switch (initialStationStatus)
                 {
