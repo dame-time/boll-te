@@ -18,7 +18,7 @@ namespace Clients
         public Ticket _ticket;
         private List<OrderObject> _orders = new List<OrderObject>();
         private bool _terminated = false;
-        
+
         private Collider _collider;
 
         public float timer;
@@ -27,7 +27,7 @@ namespace Clients
 
         public int indexClient;
 
-        private GameManager.TheData currentThe;
+        public GameManager.TheData currentThe;
 
         public Sprite iconThe;
         public Image[] images;
@@ -49,13 +49,18 @@ namespace Clients
             //_ticket = new Ticket(this, _orders);
             //LevelManager.Instance.tickets.Enqueue(_ticket);
 
-            currentThe = GameManager.Instance.TheArrayType[Random.Range(0, GameManager.Instance.TheArrayType.Length)];
+            //currentThe = GameManager.Instance.TheArrayType[Random.Range(0, GameManager.Instance.TheArrayType.Length)];
+
+            //testtttt
+            currentThe = GameManager.Instance.TheArrayType[4];
 
             print($"clients want a {currentThe.name}");
 
 
             _collider = GetComponentInChildren<Collider>();
-            
+
+            print("collider client : "  + _collider.gameObject.name);
+
             _collider.enabled = false;
 
             images = this.gameObject.GetComponentsInChildren<Image>();
@@ -91,7 +96,7 @@ namespace Clients
             //if (_isMoving) return;
 
             print("lane count " + _lane.lanePositions.Count);
-            StartCoroutine(MoveClient(_lane.laneStart.position, _lane.lanePositions[_lane.lanePositions.Count-currentIndex].position,true));
+            StartCoroutine(MoveClient(_lane.laneStart.position, _lane.lanePositions[_lane.lanePositions.Count - currentIndex].position, true));
 
             //if (currentIndex == 1)
             //{
@@ -117,16 +122,16 @@ namespace Clients
         {
             print("index client ? " + indexClient);
             print("moving into lane " + _lane.lanePositions[indexClient]);
-            StartCoroutine(MoveClient(this.transform.position, _lane.lanePositions[indexClient+1].position, false));
+            StartCoroutine(MoveClient(this.transform.position, _lane.lanePositions[indexClient + 1].position, false));
             indexClient++;
         }
 
         private void Update()
         {
             //_collider.enabled = _clientsPool.PeekClient() == this;
-            
+
             //if (_ticket.isInProgress || _terminated) return;
-            
+
             //_terminated = true;
             //StopAllCoroutines();
             //StartCoroutine(MoveClient(
@@ -165,6 +170,8 @@ namespace Clients
                 images[2].gameObject.SetActive(true);
                 clientAnimator.SetBool("isIdle", true);
                 childSK.transform.rotation = Quaternion.Euler(0, 90, 0);
+                _collider.enabled = true;
+                print("collider client status : " + _collider.enabled);
                 StartCoroutine(TimerDecrease(timer));
             }
 
@@ -205,5 +212,27 @@ namespace Clients
             //_clientsPool.PopClient();
             Debug.Log("Timer finished!");
         }
+
+        public void ClientLeave()
+        {
+            StopAllCoroutines();
+            timeSlider.gameObject.SetActive(false);
+            images[2].gameObject.SetActive(false);
+            childSK.transform.rotation = Quaternion.Euler(0, 180, 0);
+            clientAnimator.SetBool("isIdle", false);
+            StartCoroutine(MoveClient(this.transform.position, _lane.laneEnd.position, false));
+            _clientsPool._clients.Remove(this.gameObject);
+            print("current index of client = " + _clientsPool.currentIndex);
+            foreach (GameObject currentClient in _clientsPool._clients)
+            {
+
+                currentClient.GetComponent<Client>().MoveListPosition();
+
+            }
+            _clientsPool.currentIndex--;
+        }
+
     }
+
+   
 }

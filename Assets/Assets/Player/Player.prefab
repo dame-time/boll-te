@@ -155,7 +155,18 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  testHard:
+    m_Name: Test Hard
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 641d3b42-3dbc-4430-a8d0-b35056e176e8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   playerAnimator: {fileID: 2031110782694059613}
+  canInteractWihtClient: 0
+  clientRef: {fileID: 0}
   hardcodePosition: {fileID: 0}
   objectTest: {fileID: 0}
 --- !u!54 &2066610414452668988

@@ -896,13 +896,53 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8448347942994159913, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
+      propertyPath: objectTest
+      value: 
+      objectReference: {fileID: 1041522427}
+    - target: {fileID: 8448347942994159913, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
       propertyPath: drop.m_Name
       value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448347942994159913, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
+      propertyPath: testHard.m_Name
+      value: Test Hard
       objectReference: {fileID: 0}
     - target: {fileID: 8448347942994159913, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
       propertyPath: hardcodePosition
       value: 
       objectReference: {fileID: 317091931}
+    - target: {fileID: 8448347942994159913, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
+      propertyPath: testHard.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448347942994159913, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
+      propertyPath: testHard.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 1a717d4e-b579-449a-8655-1cd332bafd27
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448347942994159913, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
+      propertyPath: clientInteraction.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448347942994159913, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
+      propertyPath: testHard.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/l
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448347942994159913, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
+      propertyPath: testHard.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Test Hard
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448347942994159913, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
+      propertyPath: clientInteraction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 4c5940a5-c1aa-4d5c-ab4e-928338a4e43c
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448347942994159913, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
+      propertyPath: clientInteraction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/m
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448347942994159913, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
+      propertyPath: clientInteraction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Client Interaction
+      objectReference: {fileID: 0}
     - target: {fileID: 8553354991323214636, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2267,7 +2307,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2810589964257084218, guid: 54cbad97a51a245a4be98440aa1d0118, type: 3}
       propertyPath: m_Name
-      value: Cup_L
+      value: pippo
       objectReference: {fileID: 0}
     - target: {fileID: 3191618385366620544, guid: 54cbad97a51a245a4be98440aa1d0118, type: 3}
       propertyPath: m_LocalScale.x
@@ -3594,7 +3634,7 @@ MonoBehaviour:
     value: 0
   - name: MATCHA
     image: {fileID: 21300000, guid: ea356eb55dbf90b4f9176f4e4f076ff0, type: 3}
-    value: 0
+    value: 10
   clientsToSpawn: 5
 --- !u!4 &1726409167
 Transform:

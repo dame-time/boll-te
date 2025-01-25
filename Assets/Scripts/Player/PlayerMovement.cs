@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Clients;
 using Clients.Orders;
 using Player;
 using Unity.VisualScripting;
@@ -31,6 +32,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Animator playerAnimator;
 
+    public bool canInteractWihtClient=false;
+    public Client clientRef;
+
     //test
     // [SerializeField]
     // private  GameObject objectTest;
@@ -45,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
     private GameObject hardcodePosition;
     [SerializeField]
     private GameObject objectTest;
+    private bool objectinHandTest = false;
 
     private GameObject tempHold;
 
@@ -81,7 +86,15 @@ public class PlayerMovement : MonoBehaviour
     {
         objectTest.transform.position = hardcodePosition.transform.position;
         objectTest.transform.SetParent(hardcodePosition.transform);
+        objectinHandTest = true;
         playerAnimator.SetBool("Grabbed", true);
+        StartCoroutine(ResetGrab());
+    }
+
+    IEnumerator ResetGrab()
+    {
+        yield return new WaitForSeconds(0.2f);
+        playerAnimator.SetBool("Grabbed", false);
     }
 
 
@@ -152,6 +165,28 @@ public class PlayerMovement : MonoBehaviour
 
     private void InteractionClient(InputAction.CallbackContext context)
     {
+        print("performed client interaction");
+        print("canInteractWihtClient " + canInteractWihtClient);
+        print("clientRef: " + clientRef);
+        if (canInteractWihtClient && clientRef && objectinHandTest)
+        {
+            print("all set to client");
+            
+            print("Object in hand is: " + objectTest.gameObject.name);
+            print("Object client wants is: " + clientRef.currentThe.name);
+
+            if (objectTest.gameObject.name.Equals(clientRef.currentThe.name))
+            {
+                print("good client is happy");
+                print($"client gives to you {clientRef.currentThe.value} $ ");
+            }
+            else
+            {
+                print("bad client is angry");
+
+            }
+            clientRef.ClientLeave();
+        }
         //controllo sono dal cliente
         // reference prefab the
         // controllo che prefab sia uguale a the cliente
@@ -188,5 +223,18 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetBool(action.ToString(), false);
 
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print("TRIGEERRRRR");
+        if (!other.CompareTag("Client")) return;
+
+        canInteractWihtClient = true;
+        Client foundComponent = other.gameObject.GetComponentInParent<Client>() ?? other.gameObject.GetComponentInChildren<Client>();
+        if(foundComponent != null)
+        {
+            clientRef = foundComponent;
+        }
     }
 }
