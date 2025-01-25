@@ -129,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
             rigibody.velocity = Vector3.zero;
         }
 
-        if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("AN_Gigino_GrabLoop") && tempHold)
+        if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("AN_Gigino_Grab_Intro") && tempHold)
         {
             tempHold.transform.position = hardcodePosition.transform.position;
             tempHold.transform.SetParent(hardcodePosition.transform);
@@ -147,6 +147,8 @@ public class PlayerMovement : MonoBehaviour
         if (_stations.GetActiveStation() == null) return;
 
         var action = _stations.GetActiveStation().ExecuteAction();
+
+        print($"action performed: " + action.ToString());
 
         if (action == ExecutedAction.None) return;
         
@@ -178,10 +180,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 print("good client is happy");
                 print($"client gives to you {clientRef.currentThe.value} $ ");
+                clientRef.clientAnimator.SetBool("isHappy", true);
             }
             else
             {
                 print("bad client is angry");
+                clientRef.clientAnimator.SetBool("isAngry", true);
 
             }
             clientRef.ClientLeave();
