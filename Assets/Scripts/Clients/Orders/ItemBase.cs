@@ -9,7 +9,9 @@ namespace Clients.Orders
         Fruit,
         Tea,
         Bubble,
-        Cup
+        Cup,
+        Bin,
+        Bubbler
     }
     
     public abstract class ItemBase : MonoBehaviour

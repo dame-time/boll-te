@@ -4,6 +4,8 @@ namespace Clients.Orders
     {
         public string teaName;
         
+        public TeaType teaType;
+        
         public override string GetItemString()
         {
             return teaName;
