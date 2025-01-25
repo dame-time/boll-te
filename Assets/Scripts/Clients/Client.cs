@@ -41,7 +41,7 @@ namespace Clients
 
             if (_currentLanePositionIndex == -1)
             {
-                StartCoroutine(MoveClient(_lane.laneStart.position, _lane.lanePositions[0].position));
+                StartCoroutine(MoveClient(_lane.laneStart.position, _lane.lanePositions[_lane.lanePositions.Count -1].position));
                 _currentLanePositionIndex = 0;
             }
             else if (_currentLanePositionIndex < _lane.lanePositions.Count - 1)

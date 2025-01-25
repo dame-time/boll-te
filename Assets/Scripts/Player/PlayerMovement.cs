@@ -113,11 +113,14 @@ public class PlayerMovement : MonoBehaviour
         //print("Interaction performed");
         // objectTest.transform.position = hardcodePosition.transform.position;
         // objectTest.transform.SetParent(hardcodePosition.transform);
-        
+        if (_stations.GetActiveStation() == null) return;
+
         var action = _stations.GetActiveStation().ExecuteAction();
+
+        print($"call action = {action.ToString()}");
         if (action == ExecutedAction.None) return;
         
-        playerAnimator.SetBool("grab", true);
+        playerAnimator.SetBool(action.ToString(), true);
         playerAnimator.SetFloat("velocity", 0);
         
         StartCoroutine(ExampleCoroutine(action));
@@ -131,9 +134,13 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator ExampleCoroutine(ExecutedAction action)
     {
-        tempHold = Instantiate(_playerBackpack.objectHolded, hardcodePosition.transform.position, hardcodePosition.transform.rotation);
-        tempHold.transform.localScale = new Vector3(_playerBackpack.transform.localScale.x, _playerBackpack.transform.localScale.y, _playerBackpack.transform.localScale.z);
-        tempHold.SetActive(true);
+        if (action == ExecutedAction.Grabbed)
+        {
+            tempHold = Instantiate(_playerBackpack.objectHolded, hardcodePosition.transform.position, hardcodePosition.transform.rotation);
+            tempHold.transform.localScale = new Vector3(_playerBackpack.transform.localScale.x, _playerBackpack.transform.localScale.y, _playerBackpack.transform.localScale.z);
+            tempHold.SetActive(true);
+        }
+
         yield return new WaitForSeconds(0.2f);
         playerAnimator.SetBool(action.ToString(), false);
 
