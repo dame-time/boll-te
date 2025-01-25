@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         interaction.Enable();
         drop.Enable();
         interaction.performed += Interact;
-        drop.performed += Drop;
+        // drop.performed += Drop;
 
     }
 
@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         playerControls.Disable();
         interaction.Disable();
         interaction.performed -= Interact;
-        drop.performed -= Drop;
+        // drop.performed -= Drop;
     }
 
     // Update is called once per frame
@@ -110,43 +110,32 @@ public class PlayerMovement : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext context)
     {
-        if (_playerBackpack.isHoldingObject || !canGrab) return;
-
-
-
         //print("Interaction performed");
-        playerAnimator.SetBool("grab", true);
-        playerAnimator.SetFloat("velocity", 0);
         // objectTest.transform.position = hardcodePosition.transform.position;
         // objectTest.transform.SetParent(hardcodePosition.transform);
-        StartCoroutine(ExampleCoroutine("grab"));
+        
+        var action = _stations.GetActiveStation().ExecuteAction();
+        if (action == ExecutedAction.None) return;
+        
+        playerAnimator.SetBool("grab", true);
+        playerAnimator.SetFloat("velocity", 0);
+        
+        StartCoroutine(ExampleCoroutine(action));
     }
 
-    //private void Drop(InputAction.CallbackContext context)
-    //{
-    //    //print("Interaction performed");
-    //    if (tempHold)
-    //    {
-    //        playerAnimator.SetBool("drop", true);
-    //        tempHold.transform.position = hardcodePosition.transform.position;
-    //        tempHold.GetComponent<Rigidbody>().useGravity = true;
-    //        tempHold.transform.SetParent(null);
-    //        StartCoroutine(ExampleCoroutine("drop"));
-    //        tempHold = null;
-    //    }
-
-    //}
-
-    IEnumerator ExampleCoroutine(string reset)
+    public void Drop()
     {
-        _stations.GetActiveStation().GrabItem();
-        print("is holding backpack: ?" + _playerBackpack.isHoldingObject);
-        print("what object?: " + _playerBackpack.objectHolded);
+        tempHold.SetActive(false);
+        tempHold = null;
+    }
+
+    IEnumerator ExampleCoroutine(ExecutedAction action)
+    {
         tempHold = Instantiate(_playerBackpack.objectHolded, hardcodePosition.transform.position, hardcodePosition.transform.rotation);
         tempHold.transform.localScale = new Vector3(_playerBackpack.transform.localScale.x, _playerBackpack.transform.localScale.y, _playerBackpack.transform.localScale.z);
         tempHold.SetActive(true);
         yield return new WaitForSeconds(0.2f);
-        playerAnimator.SetBool(reset, false);
+        playerAnimator.SetBool(action.ToString(), false);
 
 
     }

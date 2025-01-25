@@ -19,6 +19,13 @@ namespace Player
         Grabbable,
         Droppable
     }
+
+    public enum ExecutedAction
+    {
+        None,
+        Grabbed,
+        Dropped
+    }
     
     public class Station : MonoBehaviour
     {
@@ -30,12 +37,14 @@ namespace Player
         
         private Stations _stations;
         private PlayerBackpack _playerBackpack;
+        private PlayerMovement _playerMovement;
 
         private void Awake()
         {
             _stations = FindObjectOfType<Stations>();
             if (stationItem == null) GetComponentInChildren<Item>();
             _playerBackpack = FindObjectOfType<PlayerBackpack>();
+            _playerMovement = FindObjectOfType<PlayerMovement>();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -56,48 +65,56 @@ namespace Player
             _stations.RemoveStation(this);
         }
 
-        public void ExecuteAction()
+        public ExecutedAction ExecuteAction()
         {
-            if (stationType == StationType.Grabbable) GrabItem();
-            else if (stationType == StationType.Droppable) DropItem();
+            if (stationType == StationType.Grabbable) return GrabItem();
+            else if (stationType == StationType.Droppable) return DropItem();
             else if (stationType == StationType.Both)
             {
                 switch (initialStationStatus)
                 {
                     case StationBothType.Grabbable:
-                        GrabItem();
+                        var grabAction = GrabItem();
+                        if (grabAction == ExecutedAction.None) return ExecutedAction.None;
                         initialStationStatus = StationBothType.Droppable;
+                        return grabAction;
                         break;
                     case StationBothType.Droppable:
-                        DropItem();
+                        var dropAction = DropItem();
+                        if (dropAction == ExecutedAction.None) return ExecutedAction.None;
                         initialStationStatus = StationBothType.Grabbable;
+                        return dropAction;
                         break;
                 }
             }
+            
+            return ExecutedAction.None;
         }
         
-        public void GrabItem()
+        public ExecutedAction GrabItem()
         {
-            if (stationItem == null) return;
-            if (!stationItem.gameObject.activeSelf || stationType != StationType.Grabbable) return;
+            if (stationItem == null) return ExecutedAction.None;
+            if (!stationItem.gameObject.activeSelf || stationType != StationType.Grabbable) return ExecutedAction.None;
             
             _playerBackpack.objectHolded = stationItem.gameObject;
             _playerBackpack.isHoldingObject = true;
             StartCoroutine(ReEnableItem());
+            
+            return ExecutedAction.Grabbed;
         }
 
-        private void DropItem()
+        private ExecutedAction DropItem()
         {
-            if (stationItem == null) return;
-            if (!stationItem.gameObject.activeSelf || stationType != StationType.Droppable) return;
+            if (stationItem == null) return ExecutedAction.None;
+            if (!stationItem.gameObject.activeSelf || stationType != StationType.Droppable) return ExecutedAction.None;
 
             if (stationItem.itemType == ItemType.Cup)
             {
-                if (!_playerBackpack.objectHolded) return;
+                if (!_playerBackpack.objectHolded) return ExecutedAction.None;
                 
                 var bubble = _playerBackpack.objectHolded.GetComponent<Bubble>();
                 
-                if (bubble == null) return;
+                if (bubble == null) return ExecutedAction.None;
                 
                 var cup = stationItem.GetItem<Cup>();
                 cup.bubble = _playerBackpack.objectHolded.GetComponent<Bubble>();
@@ -114,11 +131,11 @@ namespace Player
             
             if (stationItem.itemType == ItemType.Tea)
             {
-                if (!_playerBackpack.objectHolded) return;
+                if (!_playerBackpack.objectHolded) return ExecutedAction.None;
                 
                 var cup = _playerBackpack.objectHolded.GetComponent<Cup>();
                 
-                if (cup == null) return;
+                if (cup == null) return ExecutedAction.None;
                 
                 var tea = stationItem.GetItem<Tea>();
                 
@@ -127,6 +144,9 @@ namespace Player
                 _playerBackpack.objectHolded = null;
                 _playerBackpack.isHoldingObject = false;
             }
+
+            _playerMovement.Drop();
+            return ExecutedAction.Dropped;
         }
 
         private IEnumerator ReEnableItem()

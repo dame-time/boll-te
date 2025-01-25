@@ -275,6 +275,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stationItem: {fileID: 0}
+  stationType: 0
+  initialStationStatus: 0
 --- !u!65 &75335199
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -943,6 +945,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 8448347942994159913, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
+      propertyPath: drop.m_Name
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448347942994159913, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
+      propertyPath: hardcodePosition
+      value: 
+      objectReference: {fileID: 317091931}
     - target: {fileID: 8553354991323214636, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1207,6 +1217,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stationItem: {fileID: 0}
+  stationType: 0
+  initialStationStatus: 0
 --- !u!65 &291316016
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1236,6 +1248,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291316013}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &317091931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1574416177349174844, guid: 59f4aa2faf8a2f34fb321f7db090ebe3, type: 3}
+  m_PrefabInstance: {fileID: 267845631}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &413958628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,6 +1521,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stationItem: {fileID: 413958631}
+  stationType: 1
+  initialStationStatus: 0
 --- !u!65 &481088419
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2004,6 +2023,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stationItem: {fileID: 0}
+  stationType: 0
+  initialStationStatus: 0
 --- !u!65 &725099076
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2172,6 +2193,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stationItem: {fileID: 0}
+  stationType: 0
+  initialStationStatus: 0
 --- !u!65 &916297232
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2279,6 +2302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stationItem: {fileID: 0}
+  stationType: 0
+  initialStationStatus: 0
 --- !u!65 &1231539628
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2569,6 +2594,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stationItem: {fileID: 0}
+  stationType: 0
+  initialStationStatus: 0
 --- !u!65 &1420480169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3149,6 +3176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stationItem: {fileID: 0}
+  stationType: 0
+  initialStationStatus: 0
 --- !u!65 &1989531725
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3225,6 +3254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stationItem: {fileID: 0}
+  stationType: 0
+  initialStationStatus: 0
 --- !u!65 &2014686116
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3301,6 +3332,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stationItem: {fileID: 0}
+  stationType: 2
+  initialStationStatus: 0
 --- !u!65 &2051595258
 BoxCollider:
   m_ObjectHideFlags: 0
