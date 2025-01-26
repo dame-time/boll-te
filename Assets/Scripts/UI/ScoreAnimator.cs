@@ -32,26 +32,31 @@ public class ScoreAnimator : MonoBehaviour
 
         currentScore += points;
 
-        // Animate the text
+        Vector3 originalPosition = scoreText.transform.localPosition;
+
         Sequence animationSequence = DOTween.Sequence();
 
-        // Change color to gainColor, then back to original
+        animationSequence.Append(scoreText.transform
+                .DOLocalMoveY(originalPosition.y + 20f, animationDuration * 0.5f))
+            .Append(scoreText.transform.DOLocalMoveY(originalPosition.y, animationDuration * 0.5f));
+
+        animationSequence.Join(scoreText.DOFade(0.5f, animationDuration * 0.5f))
+            .Append(scoreText.DOFade(1f, animationDuration * 0.5f));
+
         animationSequence.Append(scoreText.DOColor(gainColor, animationDuration * 0.5f))
             .Append(scoreText.DOColor(originalColor, animationDuration * 0.5f));
 
-        // Scale up and back to normal
         animationSequence.Join(scoreText.transform.DOScale(scaleMultiplier, animationDuration * 0.5f))
             .Append(scoreText.transform.DOScale(1f, animationDuration * 0.5f));
 
-        // Update the text at the start of the animation
         animationSequence.OnStart(UpdateScoreDisplay);
 
-        // Play the sequence
         animationSequence.Play();
     }
 
+
     private void UpdateScoreDisplay()
     {
-        scoreText.text = $"Score: {currentScore}";
+        scoreText.text = currentScore.ToString();
     }
 }

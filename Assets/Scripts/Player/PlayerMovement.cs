@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool canInteractWihtClient=false;
     public Client clientRef;
+    private ScoreAnimator _scoreAnimator;
 
     //test
     // [SerializeField]
@@ -62,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
         _stations = FindObjectOfType<Stations>();
         bubbleProgression.maxValue = 100;
         bubbleProgression.value = 0;
+        _scoreAnimator = FindObjectOfType<ScoreAnimator>();
     }
 
     private void OnEnable()
@@ -182,7 +184,8 @@ public class PlayerMovement : MonoBehaviour
         if (_playerBackpack.teaType == clientRef.currentThe.teaType 
             && _playerBackpack.bubbleType == clientRef.currentThe.bubbleType)
         {
-            GameManager.Instance.money += clientRef.currentThe.value;
+            // GameManager.Instance.money += clientRef.currentThe.value;
+            _scoreAnimator.AddScore(clientRef.currentThe.value);
             clientRef.clientAnimator.SetBool("isHappy", true);
         }
         else

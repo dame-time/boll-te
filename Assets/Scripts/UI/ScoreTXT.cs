@@ -5,8 +5,8 @@ public class ScoreTXT : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     
-    private void Update()
-    {
-        scoreText.text = GameManager.Instance.money.ToString();
-    }
+    // private void Update()
+    // {
+    //     scoreText.text = GameManager.Instance.money.ToString();
+    // }
 }

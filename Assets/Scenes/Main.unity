@@ -1689,7 +1689,7 @@ MonoBehaviour:
   scoreText: {fileID: 573985851}
   animationDuration: 0.5
   scaleMultiplier: 1.5
-  gainColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  gainColor: {r: 0.03818085, g: 0.735849, b: 0.14936303, a: 1}
 --- !u!1001 &331442581
 PrefabInstance:
   m_ObjectHideFlags: 0
