@@ -6,6 +6,7 @@ using Player;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -53,10 +54,14 @@ public class PlayerMovement : MonoBehaviour
 
     private GameObject tempHold;
 
+    public Slider bubbleProgression;
+
     private void Awake()
     {
         _playerBackpack = GetComponent<PlayerBackpack>();
         _stations = FindObjectOfType<Stations>();
+        bubbleProgression.maxValue = 100;
+        bubbleProgression.value = 0;
     }
 
     private void OnEnable()
@@ -188,7 +193,7 @@ public class PlayerMovement : MonoBehaviour
                 clientRef.clientAnimator.SetBool("isAngry", true);
 
             }
-            clientRef.ClientLeave();
+            clientRef.ClientLeave(); 
         }
         //controllo sono dal cliente
         // reference prefab the

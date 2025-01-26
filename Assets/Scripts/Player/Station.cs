@@ -175,6 +175,8 @@ namespace Player
                 
                 var bubbler = stationItem.GetItem<Bubbler>();
                 bubbler.bubbleType = fruit.bubbleType;
+
+                _playerMovement.bubbleProgression.gameObject.SetActive(true);
             }
             
             if (stationItem.itemType == ItemType.Tea)

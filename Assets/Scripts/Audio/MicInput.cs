@@ -6,11 +6,11 @@ namespace Audio
     public class MicInput : MonoBehaviour
     {
         [SerializeField] private int sampleRate = 44100;
-        [SerializeField] private int fftSize = 2048;
-        [SerializeField] private float blowFrequencyMin = 50f;
-        [SerializeField] private float blowFrequencyMax = 500f;
+        [SerializeField] private int fftSize = 256;
+        [SerializeField] private float blowFrequencyMin = 0f;
+        [SerializeField] private float blowFrequencyMax = 2500f;
         [SerializeField] private float blowMin = 0.0f;
-        [SerializeField] private float blowMax = 1.0f;
+        [SerializeField] private float blowMax = 10.0f;
     
         private float[] _samples;
         private float[] _spectrum;
@@ -22,6 +22,8 @@ namespace Audio
 
         private Station _station;
 
+        private PlayerMovement playerRef;
+
         private void Start()
         {
             _station = GetComponent<Station>();
@@ -32,7 +34,7 @@ namespace Audio
                 Debug.Log($"Using Microphone: {_micDevice}");
 
                 _audioSource = gameObject.AddComponent<AudioSource>();
-                _audioSource.clip = Microphone.Start(_micDevice, true, 10, sampleRate);
+                _audioSource.clip = Microphone.Start(_micDevice, true, 1, sampleRate);
                 _audioSource.loop = true;
 
                 while (Microphone.GetPosition(_micDevice) <= 0) { }
@@ -54,6 +56,8 @@ namespace Audio
                 _station.initialStationStatus = StationBothType.Grabbable;
                 
                 progress = 0;
+                playerRef.bubbleProgression.gameObject.SetActive(false);
+                playerRef.bubbleProgression.value = 0;
                 return;
             }
         
@@ -64,6 +68,12 @@ namespace Audio
             {
                 Debug.Log("Blow detected!");
                 progress++;
+                print("progress blow is : " + progress);
+                if (playerRef)
+                {
+                    print("progress blow is : " + progress);
+                    playerRef.bubbleProgression.value = progress;
+                }
             }
         }
 
@@ -75,8 +85,20 @@ namespace Audio
             var maxIndex = Mathf.CeilToInt(blowFrequencyMax / (sampleRate / 2f) * spectrum.Length);
 
             for (var i = minIndex; i <= maxIndex; i++) sum += spectrum[i];
-
+            //Debug.Log("sum inside blow detected is: " + sum);
             return sum > blowMin && sum < blowMax;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!other.gameObject.tag.Equals("Player")) return;
+            playerRef = other.GetComponent<PlayerMovement>();
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (!other.gameObject.tag.Equals("Player")) return;            
+            playerRef = null;
         }
     }
 }
