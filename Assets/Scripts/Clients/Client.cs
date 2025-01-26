@@ -159,7 +159,6 @@ namespace Clients
 
             if (transform.position == _lane.laneEnd.position)
             {
-                print("POPPAAAAA");
                 _clientsPool.PopClient(this.gameObject);
             }
 
@@ -169,9 +168,8 @@ namespace Clients
                 timeSlider.gameObject.SetActive(true);
                 images[2].gameObject.SetActive(true);
                 clientAnimator.SetBool("isIdle", true);
-                childSK.transform.rotation = Quaternion.Euler(0, 90, 0);
+                childSK.transform.rotation = Quaternion.Euler(0, 0, 0);
                 _collider.enabled = true;
-                print("collider client status : " + _collider.enabled);
                 StartCoroutine(TimerDecrease(timer));
             }
 
@@ -197,11 +195,10 @@ namespace Clients
             timeSlider.value = 0;
             timeSlider.gameObject.SetActive(false);
             images[2].gameObject.SetActive(false);
-            childSK.transform.rotation = Quaternion.Euler(0, 180, 0);
+            childSK.transform.rotation = Quaternion.Euler(0, 90, 0);
             clientAnimator.SetBool("isIdle", false);
             StartCoroutine(MoveClient(this.transform.position, _lane.laneEnd.position, false));
             _clientsPool._clients.Remove(this.gameObject);
-            print("current index of client = " + _clientsPool.currentIndex);
             foreach (GameObject currentClient in _clientsPool._clients)
             {
 
@@ -218,11 +215,10 @@ namespace Clients
             StopAllCoroutines();
             timeSlider.gameObject.SetActive(false);
             images[2].gameObject.SetActive(false);
-            childSK.transform.rotation = Quaternion.Euler(0, 180, 0);
+            childSK.transform.rotation = Quaternion.Euler(0, 90, 0);
             clientAnimator.SetBool("isIdle", false);
             StartCoroutine(MoveClient(this.transform.position, _lane.laneEnd.position, false));
             _clientsPool._clients.Remove(this.gameObject);
-            print("current index of client = " + _clientsPool.currentIndex);
             foreach (GameObject currentClient in _clientsPool._clients)
             {
 
