@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 9fc0d4010bbf28b4594072e72b8655ab
+  m_OcclusionCullingData: {fileID: 36300000, guid: 51f1f15f87b044bc081c83bc00120758, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 96844b13d53d54a56a80768bf9c8f48d, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -138,7 +138,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &26708046
 Transform:
@@ -419,6 +419,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cup_M
       objectReference: {fileID: 0}
+    - target: {fileID: 1060710532765629857, guid: 628845858c80d47038b91338e3974ddf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -547,6 +551,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sedia (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cb8d536ce4d7448fbbfd29a69166fe68, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -632,6 +640,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
       propertyPath: m_Name
       value: Tavolino (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -740,6 +752,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -767,7 +783,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &129950174
 Transform:
@@ -901,6 +917,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MuroFinestra (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5c9feffb56914946adfc01cc724a9ab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -982,6 +1002,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1008,7 +1032,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &185800231
 Transform:
@@ -1129,6 +1153,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tavolino (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1244,6 +1272,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tavolino (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1351,6 +1383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1428,6 +1464,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
       propertyPath: m_Name
       value: Muro (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1610,6 +1650,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1691,6 +1735,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2d56df329ae5f4bc8948273050278704, type: 3}
       propertyPath: m_Name
       value: Bancone (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d56df329ae5f4bc8948273050278704, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1799,6 +1847,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1815,31 +1867,31 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1464201209}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.02
+      value: 0.006666667
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.02
+      value: 0.006666667
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.02
+      value: 0.006666667
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.67
+      value: -0.5566667
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.000000076293944
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.82
+      value: -2.94
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1847,7 +1899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1881,11 +1933,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tavolo (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
+--- !u!4 &355882727 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
+  m_PrefabInstance: {fileID: 355882726}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &379623730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1897,6 +1958,10 @@ PrefabInstance:
     - target: {fileID: 2810589964257084218, guid: 54cbad97a51a245a4be98440aa1d0118, type: 3}
       propertyPath: m_Name
       value: Cup_L
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810589964257084218, guid: 54cbad97a51a245a4be98440aa1d0118, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3191618385366620544, guid: 54cbad97a51a245a4be98440aa1d0118, type: 3}
       propertyPath: m_LocalScale.x
@@ -2082,6 +2147,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MuroFinestra (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5c9feffb56914946adfc01cc724a9ab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2112,7 +2181,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &391236747
 Transform:
@@ -2343,6 +2412,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lampada
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 42d626325d83746f4b8d09295357beb3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2423,6 +2496,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
       propertyPath: m_Name
       value: Muro (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2509,6 +2586,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
       propertyPath: m_Name
       value: Tavolino (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2623,6 +2704,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lampada
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 42d626325d83746f4b8d09295357beb3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2648,7 +2733,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &448962938
 Transform:
@@ -2795,6 +2880,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2873,6 +2962,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2898,7 +2991,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &483255615
 Transform:
@@ -3041,6 +3134,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5266785677919700964, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -5107662555505234397, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1892429615854613104, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -731749044042735872, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 843745775709185291, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3048,6 +3157,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
       propertyPath: m_Name
       value: Teiera (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037031138230942033, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3134,6 +3251,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5266785677919700964, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -5107662555505234397, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1892429615854613104, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -731749044042735872, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 843745775709185291, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3141,6 +3274,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
       propertyPath: m_Name
       value: Teiera
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037031138230942033, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3231,6 +3372,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3308,6 +3453,10 @@ PrefabInstance:
     - target: {fileID: 3403373398979784542, guid: b9c8331f03d5b4ca981669663657deeb, type: 3}
       propertyPath: m_Name
       value: Uva
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403373398979784542, guid: b9c8331f03d5b4ca981669663657deeb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3435,6 +3584,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tavolino (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3542,6 +3695,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3568,7 +3725,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &550684781
 Transform:
@@ -3690,6 +3847,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3775,6 +3936,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
       propertyPath: m_Name
       value: Tavolino (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3891,6 +4056,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tavolino (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3998,6 +4167,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4080,6 +4253,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piatto (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1659bb0b7a2fc4d6b86e476b554b3475, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4157,6 +4334,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
       propertyPath: m_Name
       value: Muro (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4334,6 +4515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sedia
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cb8d536ce4d7448fbbfd29a69166fe68, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4361,7 +4546,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &729867824
 Transform:
@@ -4500,6 +4685,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4626,6 +4815,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
       propertyPath: m_Name
       value: Tavolino (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4769,6 +4962,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5c9feffb56914946adfc01cc724a9ab, type: 3}
       propertyPath: m_Name
       value: MuroFinestra
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5c9feffb56914946adfc01cc724a9ab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4921,6 +5118,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
       propertyPath: m_Name
       value: Muro (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5093,7 +5294,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &861170695
 Transform:
@@ -5308,6 +5509,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tavolino (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -5366,7 +5571,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &883249669
 Transform:
@@ -5428,7 +5633,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &953464907
 Transform:
@@ -5633,31 +5838,31 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1464201209}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fb115232d33f446379b6ac840a00440f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.007
+      value: 0.0023333335
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb115232d33f446379b6ac840a00440f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.007
+      value: 0.0023333335
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb115232d33f446379b6ac840a00440f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.007
+      value: 0.0023333335
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb115232d33f446379b6ac840a00440f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.539
+      value: 0.8463334
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb115232d33f446379b6ac840a00440f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.083
+      value: 0.027666666
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb115232d33f446379b6ac840a00440f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.858
+      value: -1.286
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb115232d33f446379b6ac840a00440f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5665,7 +5870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb115232d33f446379b6ac840a00440f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb115232d33f446379b6ac840a00440f, type: 3}
       propertyPath: m_LocalRotation.y
@@ -5673,7 +5878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb115232d33f446379b6ac840a00440f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb115232d33f446379b6ac840a00440f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5699,6 +5904,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Divieto
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb115232d33f446379b6ac840a00440f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5707,6 +5916,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1922413558}
   m_SourcePrefab: {fileID: 100100000, guid: fb115232d33f446379b6ac840a00440f, type: 3}
+--- !u!4 &999902134 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fb115232d33f446379b6ac840a00440f, type: 3}
+  m_PrefabInstance: {fileID: 999902133}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1006549942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5775,6 +5989,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lampada (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 42d626325d83746f4b8d09295357beb3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -5803,7 +6021,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1007992848
 Transform:
@@ -5949,6 +6167,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
       propertyPath: m_Name
       value: Muro (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6115,6 +6337,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tavolino (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6160,31 +6386,31 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1464201209}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.02
+      value: 0.006666667
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.02
+      value: 0.006666667
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.02
+      value: 0.006666667
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.173
+      value: -1.7243333
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.000000076293944
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.721
+      value: -3.2403333
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6192,7 +6418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalRotation.y
@@ -6225,6 +6451,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_Name
       value: Tavolo
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6345,6 +6575,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6422,6 +6656,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
       propertyPath: m_Name
       value: Muro (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6541,6 +6779,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sedia
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cb8d536ce4d7448fbbfd29a69166fe68, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6622,6 +6864,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2d56df329ae5f4bc8948273050278704, type: 3}
       propertyPath: m_Name
       value: Bancone
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d56df329ae5f4bc8948273050278704, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6927,6 +7173,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tavolino (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7034,6 +7284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7111,6 +7365,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
       propertyPath: m_Name
       value: Muro (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7198,6 +7456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tavolino (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -7259,7 +7521,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1249282234
 Transform:
@@ -7375,6 +7637,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sedia (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cb8d536ce4d7448fbbfd29a69166fe68, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7483,6 +7749,10 @@ PrefabInstance:
     - target: {fileID: 886975470988565656, guid: a5d614313c23e4e40a8b9da185826fea, type: 3}
       propertyPath: m_Name
       value: Anguria
+      objectReference: {fileID: 0}
+    - target: {fileID: 886975470988565656, guid: a5d614313c23e4e40a8b9da185826fea, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7606,6 +7876,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bollitore
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00a73ed675f5a45858af6d17e3f238e7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -7716,6 +7990,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7801,6 +8079,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
       propertyPath: m_Name
       value: Tavolino (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7909,6 +8191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7987,6 +8273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8013,7 +8303,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1388926560
 Transform:
@@ -8135,6 +8425,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8213,6 +8507,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8290,6 +8588,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 42d626325d83746f4b8d09295357beb3, type: 3}
       propertyPath: m_Name
       value: Lampada (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 42d626325d83746f4b8d09295357beb3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8371,6 +8673,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
       propertyPath: m_Name
       value: Muro (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8454,6 +8760,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tappeto
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3a26a69742b484b568bfa35b016fbb04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8527,6 +8837,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8590,6 +8904,10 @@ Transform:
   - {fileID: 1286546468}
   - {fileID: 496458124}
   - {fileID: 488986191}
+  - {fileID: 999902134}
+  - {fileID: 1058092894}
+  - {fileID: 2110837684}
+  - {fileID: 355882727}
   - {fileID: 1651614836}
   - {fileID: 1799023892}
   m_Father: {fileID: 781451653}
@@ -8677,6 +8995,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4d8fe378324224475ba8b5498765469d, type: 3}
       propertyPath: m_Name
       value: Pavimento
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4d8fe378324224475ba8b5498765469d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8874,6 +9196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sedia (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cb8d536ce4d7448fbbfd29a69166fe68, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8930,7 +9256,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1499518955
 Transform:
@@ -9076,6 +9402,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
       propertyPath: m_Name
       value: Muro (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9239,6 +9569,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tavolino (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9353,6 +9687,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
       propertyPath: m_Name
       value: Tavolino (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9579,6 +9917,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tavolino
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9737,6 +10079,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bancone (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d56df329ae5f4bc8948273050278704, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9852,6 +10198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tavolino (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -9962,6 +10312,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10047,6 +10401,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
       propertyPath: m_Name
       value: Tavolino (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10151,6 +10509,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5266785677919700964, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -5107662555505234397, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1892429615854613104, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -731749044042735872, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 843745775709185291, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -10158,6 +10532,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
       propertyPath: m_Name
       value: Teiera (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037031138230942033, guid: 0c164844d67cc4ed09e1154e58e2cb1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10248,6 +10630,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10305,7 +10691,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1673136211
 Transform:
@@ -10370,6 +10756,10 @@ PrefabInstance:
     - target: {fileID: 7219854331782070443, guid: 8c3d746b00b0042ebb633318334db62e, type: 3}
       propertyPath: m_Name
       value: Cup_S
+      objectReference: {fileID: 0}
+    - target: {fileID: 7219854331782070443, guid: 8c3d746b00b0042ebb633318334db62e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8032666844833765905, guid: 8c3d746b00b0042ebb633318334db62e, type: 3}
       propertyPath: m_LocalScale.x
@@ -10551,6 +10941,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cassa
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4435b1777b509473a9dd96fae0911bee, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10668,6 +11062,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tavolino (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10779,6 +11177,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cestino
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 04cd47243ba14470a97695c0e30c620d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -10862,6 +11264,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
       propertyPath: m_Name
       value: Muro (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10950,6 +11356,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sedia (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cb8d536ce4d7448fbbfd29a69166fe68, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11027,6 +11437,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
       propertyPath: m_Name
       value: Muro (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11109,6 +11523,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5c9feffb56914946adfc01cc724a9ab, type: 3}
       propertyPath: m_Name
       value: MuroFinestra (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5c9feffb56914946adfc01cc724a9ab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11413,6 +11831,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11490,6 +11912,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
       propertyPath: m_Name
       value: Muro (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11572,6 +11998,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1659bb0b7a2fc4d6b86e476b554b3475, type: 3}
       propertyPath: m_Name
       value: Piatto (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1659bb0b7a2fc4d6b86e476b554b3475, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11677,6 +12107,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11759,6 +12193,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sedia (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cb8d536ce4d7448fbbfd29a69166fe68, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11836,6 +12274,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 42d626325d83746f4b8d09295357beb3, type: 3}
       propertyPath: m_Name
       value: Lampada
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 42d626325d83746f4b8d09295357beb3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11918,6 +12360,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lampada (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 42d626325d83746f4b8d09295357beb3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -11998,6 +12444,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
       propertyPath: m_Name
       value: Muro (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12081,6 +12531,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piatto
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1659bb0b7a2fc4d6b86e476b554b3475, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12162,6 +12616,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1659bb0b7a2fc4d6b86e476b554b3475, type: 3}
       propertyPath: m_Name
       value: Piatto (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1659bb0b7a2fc4d6b86e476b554b3475, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12248,6 +12706,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
       propertyPath: m_Name
       value: Tavolino (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e9937dc6d8e4cc28bbf9b1ec78d2cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12435,6 +12897,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377447fc690584ac39de1c1dffee3f51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12461,7 +12927,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2059350858
 Transform:
@@ -12518,6 +12984,10 @@ PrefabInstance:
     - target: {fileID: 7109487060784540917, guid: d31f3565d56e6468c9615f9b9ac15c97, type: 3}
       propertyPath: m_Name
       value: Mango
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109487060784540917, guid: d31f3565d56e6468c9615f9b9ac15c97, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7629705235853489743, guid: d31f3565d56e6468c9615f9b9ac15c97, type: 3}
       propertyPath: m_LocalScale.x
@@ -12689,6 +13159,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lampada
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 42d626325d83746f4b8d09295357beb3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -12708,31 +13182,31 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1464201209}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.02
+      value: 0.006666667
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.02
+      value: 0.006666667
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.02
+      value: 0.006666667
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.1
+      value: -1.3666667
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.000000076293944
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.66
+      value: 3.5533333
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12740,7 +13214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_LocalRotation.y
@@ -12773,6 +13247,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
       propertyPath: m_Name
       value: Tavolo (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4834a19c2ed2c4d2bb3de45c25895c21, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12868,6 +13346,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MuroFinestra (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5c9feffb56914946adfc01cc724a9ab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -12896,7 +13378,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2133686719
 Transform:
@@ -13047,6 +13529,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sedia (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cb8d536ce4d7448fbbfd29a69166fe68, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13129,6 +13615,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sedia (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cb8d536ce4d7448fbbfd29a69166fe68, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13149,10 +13639,6 @@ SceneRoots:
   - {fileID: 781451653}
   - {fileID: 1467377688}
   - {fileID: 400314029}
-  - {fileID: 999902133}
-  - {fileID: 1058092893}
-  - {fileID: 2110837683}
-  - {fileID: 355882726}
   - {fileID: 1472978553}
   - {fileID: 1572674779}
   - {fileID: 323484866}
