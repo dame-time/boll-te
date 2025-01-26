@@ -136,8 +136,26 @@ public class PlayerMovement : MonoBehaviour
 
         if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("AN_Gigino_Grab_Intro") && tempHold)
         {
+            print("oggetto in mano is: " + tempHold.gameObject.name);
             tempHold.transform.position = hardcodePosition.transform.position;
             tempHold.transform.SetParent(hardcodePosition.transform);
+            tempHold.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+            if (tempHold.gameObject.name.Contains("Cup"))
+            {
+                print("no cup in name");
+                tempHold.transform.localScale = new Vector3(.4f, .4f, .4f);
+            }
+        }
+        if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("AN_Gigino_Grab_Loop") && tempHold)
+        {
+            tempHold.transform.position = hardcodePosition.transform.position;
+            tempHold.transform.SetParent(hardcodePosition.transform);
+            tempHold.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+            if (tempHold.gameObject.name.Contains("Cup"))
+            {
+                print("no cup in name");
+                tempHold.transform.localScale = new Vector3(.4f, .4f, .4f);
+            }
         }
 
 
@@ -165,7 +183,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Drop()
     {
-        tempHold.SetActive(false);
+        Destroy(tempHold);
         tempHold = null;
     }
 
@@ -205,9 +223,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (action == ExecutedAction.Grabbed)
         {
+            print("oggetto from backack is : " + _playerBackpack.objectHolded.gameObject.name);
             if (tempHold == null)
             {
                 tempHold = Instantiate(_playerBackpack.objectHolded, hardcodePosition.transform.position, hardcodePosition.transform.rotation);
+                tempHold.transform.localScale = new Vector3(10, 10, 10);
                 tempHold.SetActive(true);
             }
             else

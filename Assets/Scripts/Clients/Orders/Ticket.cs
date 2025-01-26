@@ -1,4 +1,3 @@
-using Microsoft.Unity.VisualStudio.Editor;
 using System.Collections.Generic;
 
 namespace Clients.Orders
@@ -6,7 +5,7 @@ namespace Clients.Orders
     public class Ticket
     {
         public string TheName;
-        public Image theIcon;
+        //public Image theIcon;
 
 
         //public Client referenceClient;
