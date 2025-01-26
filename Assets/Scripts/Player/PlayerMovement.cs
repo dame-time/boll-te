@@ -211,13 +211,25 @@ public class PlayerMovement : MonoBehaviour
                 clientRef.clientAnimator.SetBool("isAngry", true);
 
             }
-            clientRef.ClientLeave(); 
+            StartCoroutine(WaitClientGo());
         }
         //controllo sono dal cliente
         // reference prefab the
         // controllo che prefab sia uguale a the cliente
         // 
     }
+
+    IEnumerator WaitClientGo()
+    {
+
+
+        yield return new WaitForSeconds(2f);
+        clientRef.ClientLeave();
+
+
+
+    }
+
 
     IEnumerator ExampleCoroutine(ExecutedAction action)
     {
