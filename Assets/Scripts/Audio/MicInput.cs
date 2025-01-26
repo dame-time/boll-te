@@ -34,6 +34,7 @@ namespace Audio
                 _audioSource = gameObject.AddComponent<AudioSource>();
                 _audioSource.clip = Microphone.Start(_micDevice, true, 1, sampleRate);
                 _audioSource.loop = true;
+                _audioSource.mute = true;
 
                 while (Microphone.GetPosition(_micDevice) <= 0) { }
                 _audioSource.Play();
