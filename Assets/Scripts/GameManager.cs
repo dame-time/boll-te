@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using Clients;
 using Clients.Orders;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,6 +33,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int clientsToSpawn = 5;
     
     private ClientsPool _clientsPool;
+    
+    private bool isRecipeVisible = false;
+    private float fadeDuration = 0.2f;
     
     private void Start()
     {
@@ -69,8 +73,34 @@ public class GameManager : MonoBehaviour
             _clientsPool.AddClient();
             // _clientsPool.MoveClients();
         }
-        
+
         if (Input.GetKeyDown(KeyCode.Tab))
-            recipesImage.gameObject.SetActive(!recipesImage.gameObject.activeSelf);
+            ToggleRecipesImage();
+    }
+    
+    private void ToggleRecipesImage()
+    {
+        if (recipesImage == null)
+        {
+            Debug.LogError("Recipes Image is not assigned!");
+            return;
+        }
+
+        recipesImage.DOKill();
+
+        if (isRecipeVisible)
+        {
+            recipesImage.DOFade(0f, fadeDuration).OnComplete(() =>
+            {
+                recipesImage.gameObject.SetActive(false);
+            });
+        }
+        else
+        {
+            recipesImage.gameObject.SetActive(true);
+            recipesImage.DOFade(1f, fadeDuration);
+        }
+
+        isRecipeVisible = !isRecipeVisible;
     }
 }
