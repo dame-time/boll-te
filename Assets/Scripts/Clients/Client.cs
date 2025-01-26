@@ -45,10 +45,9 @@ namespace Clients
             //_ticket = new Ticket(this, _orders);
             //LevelManager.Instance.tickets.Enqueue(_ticket);
 
-            //currentThe = GameManager.Instance.TheArrayType[Random.Range(0, GameManager.Instance.TheArrayType.Length)];
+            currentThe = GameManager.Instance.TheArrayType[Random.Range(0, GameManager.Instance.TheArrayType.Length)];
 
-            //testtttt
-            currentThe = GameManager.Instance.TheArrayType[4];
+            // currentThe = GameManager.Instance.TheArrayType[2];
 
             _collider = GetComponentInChildren<Collider>();
 

@@ -2390,27 +2390,19 @@ MonoBehaviour:
     _serializedList: []
   money: 0
   TheArrayType:
-  - teaType: 0
-    bubbleType: 0
-    image: {fileID: 21300000, guid: 0cb8556985c36d7408f104f0ea47b37b, type: 3}
-    value: 0
-  - teaType: 0
-    bubbleType: 0
-    image: {fileID: 21300000, guid: f83a0d90fd13b4d44b39ec243afa6ec1, type: 3}
-    value: 0
-  - teaType: 0
-    bubbleType: 0
-    image: {fileID: 21300000, guid: afe57cfd230dac04ca267e54118e36af, type: 3}
-    value: 0
-  - teaType: 5
-    bubbleType: 3
-    image: {fileID: 21300000, guid: ea356eb55dbf90b4f9176f4e4f076ff0, type: 3}
-    value: 10
+  - teaType: 3
+    bubbleType: 4
+    image: {fileID: 21300000, guid: 869c0ba56de984cbd8e77ef7acd79a90, type: 3}
+    value: 7
+  - teaType: 2
+    bubbleType: 10
+    image: {fileID: 21300000, guid: 67b666355ec9c419088eb0824e714f82, type: 3}
+    value: 5
   - teaType: 5
     bubbleType: 3
     image: {fileID: 21300000, guid: 0cb8556985c36d7408f104f0ea47b37b, type: 3}
     value: 10
-  clientsToSpawn: 5
+  clientsToSpawn: 10
 --- !u!4 &400314029
 Transform:
   m_ObjectHideFlags: 0

@@ -177,32 +177,31 @@ public class PlayerMovement : MonoBehaviour
 
     private void InteractionClient(InputAction.CallbackContext context)
     {
-        if (canInteractWihtClient && clientRef && objectinHandTest)
+        if (!canInteractWihtClient || !clientRef || !_playerBackpack.isHoldingObject) return;
+        
+        if (_playerBackpack.teaType == clientRef.currentThe.teaType 
+            && _playerBackpack.bubbleType == clientRef.currentThe.bubbleType)
         {
-            if (_playerBackpack.teaType == clientRef.currentThe.teaType 
-                && _playerBackpack.bubbleType == clientRef.currentThe.bubbleType)
-            {
-                GameManager.Instance.money += clientRef.currentThe.value;
-                clientRef.clientAnimator.SetBool("isHappy", true);
-            }
-            else
-            {
-                clientRef.clientAnimator.SetBool("isAngry", true);
-            }
-
-            //test
-            // objectTest.gameObject.SetActive(false);
-            // objectinHandTest = false;
-            playerAnimator.SetBool("Dropped", true);
-            StartCoroutine(ResetGrab("Dropped"));
-
-            Destroy(tempHold);
-            tempHold = null;
-            
-            _playerBackpack.Clear();
-            clientRef.DeactivateUI();
-            StartCoroutine(WaitClientGo());
+            GameManager.Instance.money += clientRef.currentThe.value;
+            clientRef.clientAnimator.SetBool("isHappy", true);
         }
+        else
+        {
+            clientRef.clientAnimator.SetBool("isAngry", true);
+        }
+
+        //test
+        // objectTest.gameObject.SetActive(false);
+        // objectinHandTest = false;
+        playerAnimator.SetBool("Dropped", true);
+        StartCoroutine(ResetGrab("Dropped"));
+
+        Destroy(tempHold);
+        tempHold = null;
+            
+        _playerBackpack.Clear();
+        clientRef.DeactivateUI();
+        StartCoroutine(WaitClientGo());
         //controllo sono dal cliente
         // reference prefab the
         // controllo che prefab sia uguale a the cliente

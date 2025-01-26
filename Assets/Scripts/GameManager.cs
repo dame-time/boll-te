@@ -43,14 +43,27 @@ public class GameManager : MonoBehaviour
         _clientsPool = FindObjectOfType<ClientsPool>();
     }
     
+    private void PlayGameOver()
+    {
+        Debug.Log("Game Over");
+    }
+    
     private void Update()
     {
+        if(clientsToSpawn == 0)
+        {
+            PlayGameOver();
+            return;
+        }
+        
         timer -= Time.deltaTime;
         if(timer < 0)
         {
             timer = Random.Range(20,30);
             _clientsPool.AddClient();
+            --clientsToSpawn;
         }
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _clientsPool.AddClient();
