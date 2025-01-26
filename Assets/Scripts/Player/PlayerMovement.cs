@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
 using Clients;
 using Clients.Orders;
 using Player;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -30,8 +28,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private InputAction testHard;
 
-    [SerializeField]
-    private Animator playerAnimator;
+    public Animator playerAnimator;
 
     public bool canInteractWihtClient=false;
     public Client clientRef;
@@ -70,6 +67,13 @@ public class PlayerMovement : MonoBehaviour
         bubbleProgression.value = 0;
         _scoreAnimator = FindObjectOfType<ScoreAnimator>();
     }
+
+    public AudioClip footstepSounds; // Array of footstep sounds
+    public float footstepInterval = 0.5f; // Time between footsteps
+    public float walkingSpeedThreshold = 0.1f; // Minimum speed to trigger footstep sounds
+    private float footstepTimer = 0f;
+
+
 
     private void OnEnable()
     {
@@ -118,12 +122,25 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = playerControls.ReadValue<Vector2>();
 
 
-        if (moveDirection != Vector2.zero) 
+        if (moveDirection != Vector2.zero)
         {
+            footstepTimer += Time.deltaTime;
+
+            // Play a footstep sound at the specified interval
+            if (footstepTimer >= footstepInterval)
+            {
+                playerAudio.PlayOneShot(footstepSounds);
+                footstepTimer = 0f; // Reset the timer
+            }
             Quaternion targetRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.y));
 
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10 * Time.deltaTime);
         }
+        else
+        {
+            footstepTimer = 0f;
+        }
+
 
     }
 

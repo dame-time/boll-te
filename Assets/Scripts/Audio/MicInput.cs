@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using Player;
 using UnityEngine;
@@ -57,6 +58,7 @@ namespace Audio
 
                 progress = 0;
                 _playerRef.bubbleProgression.gameObject.SetActive(false);
+                _playerRef.playerAnimator.SetBool("isBlow", false);
                 _playerRef.bubbleProgression.value = 0;
                 return;
             }
@@ -67,7 +69,25 @@ namespace Audio
                 _station.initialStationStatus != StationBothType.Progress) return;
             progress++;
 
-            if (_playerRef) _playerRef.bubbleProgression.value = progress * 10;
+            if (_playerRef)
+            {
+                _playerRef.bubbleProgression.value = progress * 10;
+                _playerRef.playerAnimator.SetBool("isBlow", true);
+                //StartCoroutine(StopBlow());
+            }
+
+        }
+
+        IEnumerator StopBlow()
+        {
+
+
+            yield return new WaitForSeconds(1f);
+
+            if(_playerRef) _playerRef.playerAnimator.SetBool("isBlow", false);
+
+
+
         }
 
         private bool IsBlowDetected()
@@ -94,6 +114,7 @@ namespace Audio
         private void OnTriggerExit(Collider other)
         {
             if (!other.gameObject.CompareTag("Player")) return;
+            _playerRef.playerAnimator.SetBool("isBlow", false);
             _playerRef = null;
         }
     }

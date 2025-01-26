@@ -1,8 +1,10 @@
+using System.Collections;
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using Clients;
 using Clients.Orders;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +13,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public Image recipesImage;
+
+    public Image GameOverImage;
+    public TextMeshProUGUI finalScore;
 
     public SerializedDictionary<string, GameObject> fruitMapper = new SerializedDictionary<string, GameObject>();
     public SerializedDictionary<GameObject, BubbleType> bubbleMapper = new SerializedDictionary<GameObject, BubbleType>();
@@ -22,6 +27,8 @@ public class GameManager : MonoBehaviour
     public AudioSource managerAudio;
     public AudioClip clientArrive;
     public AudioClip openRecipes;
+
+    private ScoreAnimator _scoreAnimator;
 
     [System.Serializable] // Questo permette di vedere la struct nell'Inspector
     public struct TheData
@@ -52,16 +59,41 @@ public class GameManager : MonoBehaviour
 
         managerAudio.Play();
         managerAudio.loop = true;
+
+        _scoreAnimator = FindObjectOfType<ScoreAnimator>();
     }
     
     private void PlayGameOver()
     {
-        Debug.Log("Game Over");
+
+        if(_clientsPool._clients.Count > 0)
+        {
+            StartCoroutine(CheckGameOver());
+        }
+        else
+        {
+            Debug.Log("Game Over");
+            GameOverImage.gameObject.SetActive(true);
+            Time.timeScale = 0f;
+            finalScore.text = _scoreAnimator.currentScore.ToString();
+        }
+
+    }
+
+    IEnumerator CheckGameOver()
+    {
+        yield return new WaitForSeconds(10f);
+        PlayGameOver();
     }
     
     private void Update()
     {
-        if(clientsToSpawn == 0)
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ToggleRecipesImage();
+            managerAudio.PlayOneShot(openRecipes);
+        }
+        if (clientsToSpawn == 0)
         {
             PlayGameOver();
             return;
@@ -76,18 +108,14 @@ public class GameManager : MonoBehaviour
             --clientsToSpawn;
         }
         
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            _clientsPool.AddClient();
-            managerAudio.PlayOneShot(clientArrive);
-            // _clientsPool.MoveClients();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    _clientsPool.AddClient();
+        //    managerAudio.PlayOneShot(clientArrive);
+        //    // _clientsPool.MoveClients();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            ToggleRecipesImage();
-            managerAudio.PlayOneShot(openRecipes);
-        }
+
 
         
     }

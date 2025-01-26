@@ -26,4 +26,13 @@ public class UIButtonSound : MonoBehaviour, IPointerEnterHandler, IPointerClickH
             audioSource.PlayOneShot(clickSound);
         }
     }
+
+    public void OnClick()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 }

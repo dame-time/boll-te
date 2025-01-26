@@ -9,7 +9,7 @@ public class ScoreAnimator : MonoBehaviour
     public float scaleMultiplier = 1.5f; // Scale effect during animation
     public Color gainColor = Color.yellow; // Temporary color for the animation
 
-    private int currentScore = 0; // Tracks the current score
+    public int currentScore = 0; // Tracks the current score
     private Color originalColor; // Original color of the text
 
     private void Start()
