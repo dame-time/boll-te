@@ -57,6 +57,11 @@ public class PlayerMovement : MonoBehaviour
 
     public Slider bubbleProgression;
 
+    public AudioSource playerAudio;
+    public AudioClip clientPay;
+    public AudioClip grabAudio;
+    public AudioClip dropAudio;
+
     private void Awake()
     {
         _playerBackpack = GetComponent<PlayerBackpack>();
@@ -173,6 +178,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Drop()
     {
+        playerAudio.PlayOneShot(dropAudio);
         Destroy(tempHold);
         tempHold = null;
     }
@@ -186,6 +192,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // GameManager.Instance.money += clientRef.currentThe.value;
             _scoreAnimator.AddScore(clientRef.currentThe.value);
+            playerAudio.PlayOneShot(clientPay);
             clientRef.clientAnimator.SetBool("isHappy", true);
         }
         else
@@ -227,6 +234,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (action == ExecutedAction.Grabbed)
         {
+            playerAudio.PlayOneShot(grabAudio);
             if (tempHold == null)
             {
                 tempHold = Instantiate(_playerBackpack.objectHolded, hardcodePosition.transform.position, hardcodePosition.transform.rotation);

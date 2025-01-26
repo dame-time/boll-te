@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
 
     public int money = 0;
 
+    public AudioSource managerAudio;
+    public AudioClip clientArrive;
+    public AudioClip openRecipes;
+
     [System.Serializable] // Questo permette di vedere la struct nell'Inspector
     public struct TheData
     {
@@ -45,6 +49,9 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         
         _clientsPool = FindObjectOfType<ClientsPool>();
+
+        managerAudio.Play();
+        managerAudio.loop = true;
     }
     
     private void PlayGameOver()
@@ -65,17 +72,24 @@ public class GameManager : MonoBehaviour
         {
             timer = Random.Range(20,30);
             _clientsPool.AddClient();
+            managerAudio.PlayOneShot(clientArrive);
             --clientsToSpawn;
         }
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _clientsPool.AddClient();
+            managerAudio.PlayOneShot(clientArrive);
             // _clientsPool.MoveClients();
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
+        {
             ToggleRecipesImage();
+            managerAudio.PlayOneShot(openRecipes);
+        }
+
+        
     }
     
     private void ToggleRecipesImage()
