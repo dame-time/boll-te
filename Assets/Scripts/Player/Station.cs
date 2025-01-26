@@ -50,7 +50,6 @@ namespace Player
 
         private void OnTriggerEnter(Collider other)
         {
-            print("TRIGGER PLAYER");
             if (!other.CompareTag("Player")) return;
             
             if (_stations == null) return;

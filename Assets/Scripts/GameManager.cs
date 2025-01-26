@@ -21,9 +21,10 @@ public class GameManager : MonoBehaviour
     [System.Serializable] // Questo permette di vedere la struct nell'Inspector
     public struct TheData
     {
-        public string name;      // Nome dell'oggetto
-        public Sprite image;     // Immagine dell'oggetto
-        public int value;        // Valore dell'oggetto
+        public TeaType teaType;
+        public BubbleType bubbleType;
+        public Sprite image;
+        public int value;   
     }
 
     public TheData[] TheArrayType;

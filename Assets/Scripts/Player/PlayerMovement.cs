@@ -125,7 +125,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (!playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("AN_Gigino_Grab"))
         {
-            //print("playing animation");
             rigibody.velocity = new Vector3(moveDirection.x * speed, 0, moveDirection.y * speed);
             playerAnimator.SetFloat("velocity", rigibody.velocity.magnitude);
 
@@ -137,15 +136,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("AN_Gigino_Grab_Intro") && tempHold)
         {
-            print("oggetto in mano is: " + tempHold.gameObject.name);
             tempHold.transform.position = hardcodePosition.transform.position;
             tempHold.transform.SetParent(hardcodePosition.transform);
             tempHold.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
             if (tempHold.gameObject.name.Contains("Cup"))
-            {
-                print("no cup in name");
                 tempHold.transform.localScale = new Vector3(.4f, .4f, .4f);
-            }
         }
         if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("AN_Gigino_Grab_Loop") && tempHold)
         {
@@ -153,10 +148,7 @@ public class PlayerMovement : MonoBehaviour
             tempHold.transform.SetParent(hardcodePosition.transform);
             tempHold.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
             if (tempHold.gameObject.name.Contains("Cup"))
-            {
-                print("no cup in name");
                 tempHold.transform.localScale = new Vector3(.4f, .4f, .4f);
-            }
         }
 
 
@@ -165,14 +157,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext context)
     {
-        //print("Interaction performed");
-        // objectTest.transform.position = hardcodePosition.transform.position;
-        // objectTest.transform.SetParent(hardcodePosition.transform);
         if (_stations.GetActiveStation() == null) return;
 
         var action = _stations.GetActiveStation().ExecuteAction();
-
-        print($"action performed: " + action.ToString());
 
         if (action == ExecutedAction.None) return;
         
@@ -190,38 +177,29 @@ public class PlayerMovement : MonoBehaviour
 
     private void InteractionClient(InputAction.CallbackContext context)
     {
-        print("performed client interaction");
-        print("canInteractWihtClient " + canInteractWihtClient);
-        print("clientRef: " + clientRef);
         if (canInteractWihtClient && clientRef && objectinHandTest)
         {
-            print("all set to client");
-            
-            print("Object in hand is: " + objectTest.gameObject.name);
-            print("Object client wants is: " + clientRef.currentThe.name);
-
-            if (objectTest.gameObject.name.Equals(clientRef.currentThe.name))
+            if (_playerBackpack.teaType == clientRef.currentThe.teaType 
+                && _playerBackpack.bubbleType == clientRef.currentThe.bubbleType)
             {
-                print("good client is happy");
-                print($"client gives to you {clientRef.currentThe.value} $ ");
                 GameManager.Instance.money += clientRef.currentThe.value;
                 clientRef.clientAnimator.SetBool("isHappy", true);
             }
             else
             {
-                print("bad client is angry");
                 clientRef.clientAnimator.SetBool("isAngry", true);
-
             }
 
             //test
-            objectTest.gameObject.SetActive(false);
-            objectinHandTest = false;
+            // objectTest.gameObject.SetActive(false);
+            // objectinHandTest = false;
             playerAnimator.SetBool("Dropped", true);
             StartCoroutine(ResetGrab("Dropped"));
 
-            //Destroy(tempHold);
-            //tempHold = null;
+            Destroy(tempHold);
+            tempHold = null;
+            
+            _playerBackpack.Clear();
             clientRef.DeactivateUI();
             StartCoroutine(WaitClientGo());
         }
@@ -247,7 +225,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (action == ExecutedAction.Grabbed)
         {
-            print("oggetto from backack is : " + _playerBackpack.objectHolded.gameObject.name);
             if (tempHold == null)
             {
                 tempHold = Instantiate(_playerBackpack.objectHolded, hardcodePosition.transform.position, hardcodePosition.transform.rotation);
@@ -273,20 +250,15 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(0.2f);
         playerAnimator.SetBool(action.ToString(), false);
-
-
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        print("TRIGEERRRRR");
         if (!other.CompareTag("Client")) return;
 
         canInteractWihtClient = true;
         Client foundComponent = other.gameObject.GetComponentInParent<Client>() ?? other.gameObject.GetComponentInChildren<Client>();
         if(foundComponent != null)
-        {
             clientRef = foundComponent;
-        }
     }
 }

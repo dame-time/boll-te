@@ -36,10 +36,6 @@ namespace Clients
 
         private GameObject childSK;
 
-
-
-
-
         public void Initialize()
         {
             _lane = FindObjectOfType<Lane>();
@@ -54,12 +50,7 @@ namespace Clients
             //testtttt
             currentThe = GameManager.Instance.TheArrayType[4];
 
-            print($"clients want a {currentThe.name}");
-
-
             _collider = GetComponentInChildren<Collider>();
-
-            print("collider client : "  + _collider.gameObject.name);
 
             _collider.enabled = false;
 
@@ -68,10 +59,8 @@ namespace Clients
             images[2].sprite = currentThe.image;
             images[2].preserveAspect = true;
             images[2].gameObject.SetActive(false);
-            print("image on this object: " + images[2]);
 
             clientAnimator = this.gameObject.GetComponentInChildren<Animator>();
-            print("animator on this object: " + clientAnimator);
 
             Transform skChild = this.gameObject.transform.Find("SK_Cliente");
             childSK = skChild.gameObject;
@@ -95,7 +84,6 @@ namespace Clients
         {
             //if (_isMoving) return;
 
-            print("lane count " + _lane.lanePositions.Count);
             StartCoroutine(MoveClient(_lane.laneStart.position, _lane.lanePositions[_lane.lanePositions.Count - currentIndex].position, true));
 
             //if (currentIndex == 1)
@@ -120,8 +108,6 @@ namespace Clients
 
         public void MoveListPosition()
         {
-            print("index client ? " + indexClient);
-            print("moving into lane " + _lane.lanePositions[indexClient]);
             StartCoroutine(MoveClient(this.transform.position, _lane.lanePositions[indexClient + 1].position, false));
             childSK.transform.rotation = Quaternion.Euler(0, 90, 0);
             clientAnimator.SetBool("isIdle", false);
@@ -171,7 +157,6 @@ namespace Clients
                 images[2].gameObject.SetActive(true);
                 StartCoroutine(TimerDecrease(timer));
             }
-            print("index client is: " + indexClient);
             if(indexClient == 5)
             {
                 _collider.enabled = true;
@@ -187,7 +172,6 @@ namespace Clients
             bool animatedMidOnce = false;
             while (timer > 0)
             {
-                //print($"current timer: {timer}");
                 // Decrease the timer
                 timer -= Time.deltaTime;
 
@@ -196,7 +180,6 @@ namespace Clients
 
                 if(timer < (tempTimer / 2) && !animatedMidOnce)
                 {
-                    print("client must animated mid");
                     clientAnimator.SetBool("isMid", true);
                     animatedMidOnce = true;
                     StartCoroutine(WaitMidAnimation());
@@ -223,7 +206,6 @@ namespace Clients
             }
             _clientsPool.currentIndex--;
             //_clientsPool.PopClient();
-            Debug.Log("Timer finished!");
         }
         private IEnumerator WaitMidAnimation()
         {
