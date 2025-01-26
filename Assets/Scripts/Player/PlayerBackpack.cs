@@ -11,5 +11,15 @@ namespace Player
         public TeaSize teaSize;
         public TeaType teaType;
         public bool isHoldingObject;
+
+        public void Clear()
+        {
+            objectHolded = null;
+            bubbleType = BubbleType.None;
+            cupFull = null;
+            teaSize = TeaSize.None;
+            teaType = TeaType.None;
+            isHoldingObject = false;
+        }
     }
 }

@@ -1,3 +1,4 @@
+using System.Linq;
 using Player;
 using UnityEngine;
 
@@ -6,28 +7,25 @@ namespace Audio
     public class MicInput : MonoBehaviour
     {
         [SerializeField] private int sampleRate = 44100;
-        [SerializeField] private int fftSize = 256;
-        [SerializeField] private float blowFrequencyMin = 0f;
-        [SerializeField] private float blowFrequencyMax = 2500f;
-        [SerializeField] private float blowMin = 0.0f;
-        [SerializeField] private float blowMax = 10.0f;
-    
+        [SerializeField] private int fftSize = 1024; // Size of the sample buffer
+        [SerializeField] private float blowThreshold = 0.008f; // Minimum amplitude for detecting a blow
+        [SerializeField] private float blowMinDuration = 0.005f; // Minimum duration for sustained amplitude to be considered a blow
+
         private float[] _samples;
-        private float[] _spectrum;
-        
-        public int progress = 0;
-        
+
         private string _micDevice;
         private AudioSource _audioSource;
 
+        private float _blowTime;
         private Station _station;
+        private PlayerMovement _playerRef;
 
-        private PlayerMovement playerRef;
+        public int progress = 0;
 
         private void Start()
         {
             _station = GetComponent<Station>();
-            
+
             if (Microphone.devices.Length > 0)
             {
                 _micDevice = Microphone.devices[0];
@@ -41,64 +39,61 @@ namespace Audio
                 _audioSource.Play();
 
                 _samples = new float[fftSize];
-                _spectrum = new float[fftSize];
             }
             else
+            {
                 Debug.LogError("No microphone detected!");
+            }
         }
 
         private void Update()
         {
             if (!_audioSource || !_audioSource.clip) return;
 
-            if (progress >= 100)
+            if (progress >= 10)
             {
                 _station.initialStationStatus = StationBothType.Grabbable;
-                
+
                 progress = 0;
-                playerRef.bubbleProgression.gameObject.SetActive(false);
-                playerRef.bubbleProgression.value = 0;
+                _playerRef.bubbleProgression.gameObject.SetActive(false);
+                _playerRef.bubbleProgression.value = 0;
                 return;
             }
-        
-            _audioSource.clip.GetData(_samples, 0);
-            AudioListener.GetSpectrumData(_spectrum, 0, FFTWindow.Hamming);
 
-            if (IsBlowDetected(_spectrum) && _station.stationType == StationType.Both && _station.initialStationStatus == StationBothType.Progress)
-            {
-                Debug.Log("Blow detected!");
-                progress++;
-                print("progress blow is : " + progress);
-                if (playerRef)
-                {
-                    print("progress blow is : " + progress);
-                    playerRef.bubbleProgression.value = progress;
-                }
-            }
+            _audioSource.clip.GetData(_samples, 0);
+
+            if (!IsBlowDetected() || _station.stationType != StationType.Both ||
+                _station.initialStationStatus != StationBothType.Progress) return;
+            progress++;
+
+            if (_playerRef) _playerRef.bubbleProgression.value = progress * 10;
         }
 
-        private bool IsBlowDetected(float[] spectrum)
+        private bool IsBlowDetected()
         {
-            var sum = 0f;
+            var sum = _samples.Sum(sample => Mathf.Abs(sample));
 
-            var minIndex = Mathf.FloorToInt(blowFrequencyMin / (sampleRate / 2f) * spectrum.Length);
-            var maxIndex = Mathf.CeilToInt(blowFrequencyMax / (sampleRate / 2f) * spectrum.Length);
+            var averageAmplitude = sum / _samples.Length;
 
-            for (var i = minIndex; i <= maxIndex; i++) sum += spectrum[i];
-            //Debug.Log("sum inside blow detected is: " + sum);
-            return sum > blowMin && sum < blowMax;
+            if (!(averageAmplitude > blowThreshold)) return false;
+            _blowTime += Time.deltaTime;
+            if (!(_blowTime >= blowMinDuration)) return false;
+            
+            _blowTime = 0f;
+            return true;
+
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.gameObject.tag.Equals("Player")) return;
-            playerRef = other.GetComponent<PlayerMovement>();
+            if (!other.gameObject.CompareTag("Player")) return;
+            _playerRef = other.GetComponent<PlayerMovement>();
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (!other.gameObject.tag.Equals("Player")) return;            
-            playerRef = null;
+            if (!other.gameObject.CompareTag("Player")) return;
+            _playerRef = null;
         }
     }
 }

@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.2971698, g: 0.2327984, b: 0.07709595, a: 1}
+  m_AmbientSkyColor: {r: 0.17259635, g: 0.29803923, b: 0.07843136, a: 1}
   m_AmbientEquatorColor: {r: 0.21181916, g: 0.31114274, b: 0.3773585, a: 1}
   m_AmbientGroundColor: {r: 0.11320752, g: 0.107689545, b: 0.09665359, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 1
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.53395337, g: 0.57320124, b: 0.6698113, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: cc421da483ed06c49933077a621bff25, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 1cf6f4c6e6e0518419839d3f5448dd99, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.8917017, g: 0.5469025, b: 0.6555838, a: 1}
+  m_IndirectSpecularColor: {r: 0.31282693, g: 0.2934517, b: 0.513958, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4414,10 +4414,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sampleRate: 44100
   fftSize: 1024
-  blowFrequencyMin: 100
-  blowFrequencyMax: 200
-  blowMin: 0.02
-  blowMax: 0.03
+  blowThreshold: 0.015
+  blowMinDuration: 0.1
   progress: 0
 --- !u!114 &729867828
 MonoBehaviour:
