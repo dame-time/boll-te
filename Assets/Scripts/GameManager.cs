@@ -3,10 +3,13 @@ using AYellowpaper.SerializedCollections;
 using Clients;
 using Clients.Orders;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
+    public Image recipesImage;
 
     public SerializedDictionary<string, GameObject> fruitMapper = new SerializedDictionary<string, GameObject>();
     public SerializedDictionary<GameObject, BubbleType> bubbleMapper = new SerializedDictionary<GameObject, BubbleType>();
@@ -42,5 +45,8 @@ public class GameManager : MonoBehaviour
             _clientsPool.AddClient();
             // _clientsPool.MoveClients();
         }
+        
+        if (Input.GetKeyDown(KeyCode.Tab))
+            recipesImage.gameObject.SetActive(!recipesImage.gameObject.activeSelf);
     }
 }
