@@ -89,17 +89,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void HardTest(InputAction.CallbackContext context)
     {
+        objectTest.gameObject.SetActive(true);
         objectTest.transform.position = hardcodePosition.transform.position;
         objectTest.transform.SetParent(hardcodePosition.transform);
         objectinHandTest = true;
         playerAnimator.SetBool("Grabbed", true);
-        StartCoroutine(ResetGrab());
+        StartCoroutine(ResetGrab("Grabbed"));
     }
 
-    IEnumerator ResetGrab()
+    IEnumerator ResetGrab(string reset)
     {
         yield return new WaitForSeconds(0.2f);
-        playerAnimator.SetBool("Grabbed", false);
+        playerAnimator.SetBool(reset, false);
     }
 
 
@@ -203,6 +204,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 print("good client is happy");
                 print($"client gives to you {clientRef.currentThe.value} $ ");
+                GameManager.Instance.money += clientRef.currentThe.value;
                 clientRef.clientAnimator.SetBool("isHappy", true);
             }
             else
@@ -211,6 +213,16 @@ public class PlayerMovement : MonoBehaviour
                 clientRef.clientAnimator.SetBool("isAngry", true);
 
             }
+
+            //test
+            objectTest.gameObject.SetActive(false);
+            objectinHandTest = false;
+            playerAnimator.SetBool("Dropped", true);
+            StartCoroutine(ResetGrab("Dropped"));
+
+            //Destroy(tempHold);
+            //tempHold = null;
+            clientRef.DeactivateUI();
             StartCoroutine(WaitClientGo());
         }
         //controllo sono dal cliente

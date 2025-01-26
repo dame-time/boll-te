@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
     public SerializedDictionary<string, GameObject> fruitMapper = new SerializedDictionary<string, GameObject>();
     public SerializedDictionary<GameObject, BubbleType> bubbleMapper = new SerializedDictionary<GameObject, BubbleType>();
 
+    private float timer = 5;
+
+    public int money = 0;
+
     [System.Serializable] // Questo permette di vedere la struct nell'Inspector
     public struct TheData
     {
@@ -40,6 +44,12 @@ public class GameManager : MonoBehaviour
     
     private void Update()
     {
+        timer -= Time.deltaTime;
+        if(timer < 0)
+        {
+            timer = Random.Range(20,30);
+            _clientsPool.AddClient();
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _clientsPool.AddClient();

@@ -123,6 +123,8 @@ namespace Clients
             print("index client ? " + indexClient);
             print("moving into lane " + _lane.lanePositions[indexClient]);
             StartCoroutine(MoveClient(this.transform.position, _lane.lanePositions[indexClient + 1].position, false));
+            childSK.transform.rotation = Quaternion.Euler(0, 90, 0);
+            clientAnimator.SetBool("isIdle", false);
             indexClient++;
         }
 
@@ -167,16 +169,22 @@ namespace Clients
                 _isMoving = false;
                 timeSlider.gameObject.SetActive(true);
                 images[2].gameObject.SetActive(true);
-                clientAnimator.SetBool("isIdle", true);
-                childSK.transform.rotation = Quaternion.Euler(0, 0, 0);
-                _collider.enabled = true;
                 StartCoroutine(TimerDecrease(timer));
             }
+            print("index client is: " + indexClient);
+            if(indexClient == 5)
+            {
+                _collider.enabled = true;
+            }
+            clientAnimator.SetBool("isIdle", true);
+            childSK.transform.rotation = Quaternion.Euler(0, 0, 0);
 
         }
 
         private IEnumerator TimerDecrease(float timer)
         {
+            float tempTimer = timer;
+            bool animatedMidOnce = false;
             while (timer > 0)
             {
                 //print($"current timer: {timer}");
@@ -185,6 +193,14 @@ namespace Clients
 
                 // Update the slider
                 timeSlider.value = timer;
+
+                if(timer < (tempTimer / 2) && !animatedMidOnce)
+                {
+                    print("client must animated mid");
+                    clientAnimator.SetBool("isMid", true);
+                    animatedMidOnce = true;
+                    StartCoroutine(WaitMidAnimation());
+                }
 
                 // Wait for the next frame
                 yield return null;
@@ -209,12 +225,18 @@ namespace Clients
             //_clientsPool.PopClient();
             Debug.Log("Timer finished!");
         }
+        private IEnumerator WaitMidAnimation()
+        {
+
+            yield return new WaitForSeconds(.2f);
+            clientAnimator.SetBool("isMid", false);
+
+        }
 
         public void ClientLeave()
         {
             StopAllCoroutines();
-            timeSlider.gameObject.SetActive(false);
-            images[2].gameObject.SetActive(false);
+            DeactivateUI();
             childSK.transform.rotation = Quaternion.Euler(0, 90, 0);
             clientAnimator.SetBool("isIdle", false);
             StartCoroutine(MoveClient(this.transform.position, _lane.laneEnd.position, false));
@@ -226,6 +248,12 @@ namespace Clients
 
             }
             _clientsPool.currentIndex--;
+        }
+
+        public void DeactivateUI()
+        {
+            timeSlider.gameObject.SetActive(false);
+            images[2].gameObject.SetActive(false);
         }
 
     }

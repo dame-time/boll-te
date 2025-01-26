@@ -33,7 +33,7 @@ namespace Clients
             var client = Instantiate(clientPrefab, transform);
             var clientComponent = client.AddComponent<Client>();
             clientComponent.Initialize();
-            clientComponent.timer = Random.Range(50, 60);
+            clientComponent.timer = Random.Range(30, 35);
             //clientComponent.timeSlider.maxValue = clientComponent.timer;
             //clientComponent.timeSlider.value = clientComponent.timer;
             client.transform.position = _lane.laneStart.position;
